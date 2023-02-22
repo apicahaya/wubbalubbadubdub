@@ -8,24 +8,25 @@
 import UIKit
 
 final class WLDDCharacterViewController: UIViewController {
-
+    
+    private let characterListView = WLDDCharacterListView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
         title = "Characters"
-        
-        WLDDService.shared.execute(
-            .listCharacterRequests,
-            expecting: WLDDGetAllCharactersResponse.self
-        ) { result in
-            switch result {
-            case .success(let model):
-                print(String(describing: model))
-            case .failure(let error):
-                print(String(describing: error))
-            }
-        }
-        
+        view.addSubview(characterListView)
+        setupView()
     }    
+    
+    // MARK: - Private Methods
+    private func setupView() {
+        NSLayoutConstraint.activate([
+            characterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            characterListView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            characterListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            characterListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+        ])
+    }
 }

@@ -30,6 +30,9 @@
 		D5E4189029A5CEE50077C16C /* WLDDCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188F29A5CEE50077C16C /* WLDDCharacterGender.swift */; };
 		D5E4189229A5CEF40077C16C /* WLDDCharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189129A5CEF40077C16C /* WLDDCharacterStatus.swift */; };
 		D5E4189629A63D540077C16C /* WLDDGetCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189529A63D540077C16C /* WLDDGetCharactersResponse.swift */; };
+		D5E4189829A641DF0077C16C /* WLDDCharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189729A641DF0077C16C /* WLDDCharacterListView.swift */; };
+		D5E4189A29A6434B0077C16C /* WLDDCharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189929A6434B0077C16C /* WLDDCharacterListViewModel.swift */; };
+		D5E4189C29A6B4160077C16C /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189B29A6B4160077C16C /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		D5E4188F29A5CEE50077C16C /* WLDDCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterGender.swift; sourceTree = "<group>"; };
 		D5E4189129A5CEF40077C16C /* WLDDCharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterStatus.swift; sourceTree = "<group>"; };
 		D5E4189529A63D540077C16C /* WLDDGetCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDGetCharactersResponse.swift; sourceTree = "<group>"; };
+		D5E4189729A641DF0077C16C /* WLDDCharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterListView.swift; sourceTree = "<group>"; };
+		D5E4189929A6434B0077C16C /* WLDDCharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterListViewModel.swift; sourceTree = "<group>"; };
+		D5E4189B29A6B4160077C16C /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 		D5E4186829A5B89A0077C16C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D5E4189729A641DF0077C16C /* WLDDCharacterListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +183,7 @@
 		D5E4186929A5B8A10077C16C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D5E4189929A6434B0077C16C /* WLDDCharacterListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				D5E4188329A5C8CF0077C16C /* UIImageExtensions.swift */,
+				D5E4189B29A6B4160077C16C /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -408,11 +417,14 @@
 				D5E4189029A5CEE50077C16C /* WLDDCharacterGender.swift in Sources */,
 				D5E4188E29A5CDE40077C16C /* WLDDSingleLocation.swift in Sources */,
 				D5E4187A29A5BC340077C16C /* WLDDLocationViewController.swift in Sources */,
+				D5E4189C29A6B4160077C16C /* UIViewExtensions.swift in Sources */,
 				D504758329A5B4CE00906BBD /* SceneDelegate.swift in Sources */,
 				D5E4187529A5BB8F0077C16C /* WLDDEpisode.swift in Sources */,
 				D5E4188829A5CA6F0077C16C /* WLDDRequest.swift in Sources */,
 				D5E4187329A5BB850077C16C /* WLDDCharacter.swift in Sources */,
 				D5E4189629A63D540077C16C /* WLDDGetCharactersResponse.swift in Sources */,
+				D5E4189A29A6434B0077C16C /* WLDDCharacterListViewModel.swift in Sources */,
+				D5E4189829A641DF0077C16C /* WLDDCharacterListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
