@@ -29,6 +29,7 @@
 		D5E4188E29A5CDE40077C16C /* WLDDSingleLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188D29A5CDE40077C16C /* WLDDSingleLocation.swift */; };
 		D5E4189029A5CEE50077C16C /* WLDDCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188F29A5CEE50077C16C /* WLDDCharacterGender.swift */; };
 		D5E4189229A5CEF40077C16C /* WLDDCharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189129A5CEF40077C16C /* WLDDCharacterStatus.swift */; };
+		D5E4189629A63D540077C16C /* WLDDGetCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189529A63D540077C16C /* WLDDGetCharactersResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		D5E4188D29A5CDE40077C16C /* WLDDSingleLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDSingleLocation.swift; sourceTree = "<group>"; };
 		D5E4188F29A5CEE50077C16C /* WLDDCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterGender.swift; sourceTree = "<group>"; };
 		D5E4189129A5CEF40077C16C /* WLDDCharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterStatus.swift; sourceTree = "<group>"; };
+		D5E4189529A63D540077C16C /* WLDDGetCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDGetCharactersResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,13 +183,8 @@
 		D5E4186A29A5B8A60077C16C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D5E4187229A5BB850077C16C /* WLDDCharacter.swift */,
-				D5E4187429A5BB8F0077C16C /* WLDDEpisode.swift */,
-				D5E4187029A5BB7A0077C16C /* WLDDLocation.swift */,
-				D5E4188B29A5CD550077C16C /* WLDDOrigin.swift */,
-				D5E4188D29A5CDE40077C16C /* WLDDSingleLocation.swift */,
-				D5E4188F29A5CEE50077C16C /* WLDDCharacterGender.swift */,
-				D5E4189129A5CEF40077C16C /* WLDDCharacterStatus.swift */,
+				D5E4189429A63D330077C16C /* APIResponseTypes */,
+				D5E4189329A63D270077C16C /* DataTypes */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,9 +199,9 @@
 		D5E4186C29A5B8B30077C16C /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
-				D5E4188529A5CA5B0077C16C /* WLDDService.swift */,
-				D5E4188729A5CA6F0077C16C /* WLDDRequest.swift */,
 				D5E4188929A5CAEE0077C16C /* WLDDEndPoint.swift */,
+				D5E4188729A5CA6F0077C16C /* WLDDRequest.swift */,
+				D5E4188529A5CA5B0077C16C /* WLDDService.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -244,6 +241,28 @@
 				D5E4188329A5C8CF0077C16C /* UIImageExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D5E4189329A63D270077C16C /* DataTypes */ = {
+			isa = PBXGroup;
+			children = (
+				D5E4187229A5BB850077C16C /* WLDDCharacter.swift */,
+				D5E4187429A5BB8F0077C16C /* WLDDEpisode.swift */,
+				D5E4187029A5BB7A0077C16C /* WLDDLocation.swift */,
+				D5E4188B29A5CD550077C16C /* WLDDOrigin.swift */,
+				D5E4188D29A5CDE40077C16C /* WLDDSingleLocation.swift */,
+				D5E4188F29A5CEE50077C16C /* WLDDCharacterGender.swift */,
+				D5E4189129A5CEF40077C16C /* WLDDCharacterStatus.swift */,
+			);
+			path = DataTypes;
+			sourceTree = "<group>";
+		};
+		D5E4189429A63D330077C16C /* APIResponseTypes */ = {
+			isa = PBXGroup;
+			children = (
+				D5E4189529A63D540077C16C /* WLDDGetCharactersResponse.swift */,
+			);
+			path = APIResponseTypes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +412,7 @@
 				D5E4187529A5BB8F0077C16C /* WLDDEpisode.swift in Sources */,
 				D5E4188829A5CA6F0077C16C /* WLDDRequest.swift in Sources */,
 				D5E4187329A5BB850077C16C /* WLDDCharacter.swift in Sources */,
+				D5E4189629A63D540077C16C /* WLDDGetCharactersResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

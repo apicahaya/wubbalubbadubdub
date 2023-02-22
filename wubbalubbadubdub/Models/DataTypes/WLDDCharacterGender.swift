@@ -11,5 +11,5 @@ enum WLDDCharacterGender: String, Codable {
     case male = "Male"
     case female = "Female"
     case neutral = "Neutral"
-    case `unknown` = "Unknown"
+    case `unknown` = "unknown"
 }

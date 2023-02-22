@@ -15,17 +15,17 @@ final class WLDDCharacterViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = "Characters"
         
-        let request = WLDDRequest(
-            endpoint: .character,
-            queryParameters: [
-                URLQueryItem(name: "name", value: "rick"),
-                URLQueryItem(name: "status", value: "alive")
-            ]
-        )
-        print(request.url ?? "Endpoint dont get")
-        
-        WLDDService.shared.execute(request, expecting: WLDDCharacter.self) { result in
-                
+        WLDDService.shared.execute(
+            .listCharacterRequests,
+            expecting: WLDDGetAllCharactersResponse.self
+        ) { result in
+            switch result {
+            case .success(let model):
+                print(String(describing: model))
+            case .failure(let error):
+                print(String(describing: error))
+            }
         }
+        
     }    
 }

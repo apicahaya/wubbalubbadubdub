@@ -61,3 +61,8 @@ final class WLDDRequest {
     }
     
 }
+
+// MARK: - Extensions
+extension WLDDRequest {
+    static let listCharacterRequests = WLDDRequest(endpoint: .character)
+}
