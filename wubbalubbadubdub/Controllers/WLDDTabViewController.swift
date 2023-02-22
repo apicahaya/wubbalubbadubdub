@@ -34,11 +34,24 @@ final class WLDDTabViewController: UITabBarController {
         let nav3 = UINavigationController(rootViewController: episodesVC)
         let nav4 = UINavigationController(rootViewController: settingsVC)
         
-        nav1.tabBarItem = UITabBarItem(title: "Characters", image: nil, tag: 1)
-        nav2.tabBarItem = UITabBarItem(title: "Locations", image: nil, tag: 2)
-        nav3.tabBarItem = UITabBarItem(title: "Episodes", image: nil, tag: 3)
+        nav1.tabBarItem = UITabBarItem(
+            title: "Characters",
+            image: UIImage(named: "TabBar/CharacterSelected")?.resized(to: CGSize(width: 32.0,
+            height: 32.0)),
+            tag: 1
+        )
+        nav2.tabBarItem = UITabBarItem(
+            title: "Locations",
+            image: UIImage(named: "TabBar/LocationSelected")?.resized(to: CGSize(width: 32.0, height: 32.0)),
+            tag: 2
+        )
+        nav3.tabBarItem = UITabBarItem(
+            title: "Episodes",
+            image: UIImage(named: "TabBar/EpisodeSelected")?.resized(to: CGSize(width: 32.0,
+            height: 32.0)),
+            tag: 3
+        )
         nav4.tabBarItem = UITabBarItem(title: "Settings", image: nil, tag: 4)
-        
         
         for nav in [nav1,
                     nav2,
@@ -56,7 +69,5 @@ final class WLDDTabViewController: UITabBarController {
         )
         
     }
-
-
 }
 

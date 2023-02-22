@@ -22,6 +22,7 @@
 		D5E4187A29A5BC340077C16C /* WLDDLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4187929A5BC340077C16C /* WLDDLocationViewController.swift */; };
 		D5E4187C29A5BC470077C16C /* WLDDEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4187B29A5BC470077C16C /* WLDDEpisodeViewController.swift */; };
 		D5E4187E29A5BC500077C16C /* WLDDSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4187D29A5BC500077C16C /* WLDDSettingViewController.swift */; };
+		D5E4188429A5C8CF0077C16C /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188329A5C8CF0077C16C /* UIImageExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D5E4187929A5BC340077C16C /* WLDDLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDLocationViewController.swift; sourceTree = "<group>"; };
 		D5E4187B29A5BC470077C16C /* WLDDEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeViewController.swift; sourceTree = "<group>"; };
 		D5E4187D29A5BC500077C16C /* WLDDSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDSettingViewController.swift; sourceTree = "<group>"; };
+		D5E4188329A5C8CF0077C16C /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +115,9 @@
 			children = (
 				D504758E29A5B4D000906BBD /* Info.plist */,
 				D5E4186C29A5B8B30077C16C /* APIClient */,
+				D5E4187F29A5C4350077C16C /* Assets */,
 				D5E4186729A5B8860077C16C /* Controllers */,
+				D5E4188229A5C8B70077C16C /* Extensions */,
 				D5E4186B29A5B8AB0077C16C /* Managers */,
 				D5E4186A29A5B8A60077C16C /* Models */,
 				D5E4186D29A5B8BE0077C16C /* Resources */,
@@ -193,7 +197,6 @@
 				D504758029A5B4CE00906BBD /* AppDelegate.swift */,
 				D504758229A5B4CE00906BBD /* SceneDelegate.swift */,
 				D5E4186E29A5BAF50077C16C /* LaunchScreen.storyboard */,
-				D504758929A5B4D000906BBD /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -207,6 +210,22 @@
 				D5E4187D29A5BC500077C16C /* WLDDSettingViewController.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		D5E4187F29A5C4350077C16C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D504758929A5B4D000906BBD /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		D5E4188229A5C8B70077C16C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D5E4188329A5C8CF0077C16C /* UIImageExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D504758529A5B4CE00906BBD /* WLDDTabViewController.swift in Sources */,
+				D5E4188429A5C8CF0077C16C /* UIImageExtensions.swift in Sources */,
 				D5E4187129A5BB7A0077C16C /* WLDDLocation.swift in Sources */,
 				D5E4187829A5BC260077C16C /* WLDDCharacterViewController.swift in Sources */,
 				D504758129A5B4CE00906BBD /* AppDelegate.swift in Sources */,
