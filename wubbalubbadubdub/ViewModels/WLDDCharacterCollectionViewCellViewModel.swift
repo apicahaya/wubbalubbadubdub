@@ -11,25 +11,25 @@ import Foundation
 final class WLDDCharacterCollectionViewCellViewModel {
     
     public let characterName: String
-    private let characterStatus: WLDDCharacterStatus
+    private let characterSpecies: String
     private let characterImageUrl: URL?
 
     // MARK: - Init
     init (
         characterName: String,
-        characterStatus: WLDDCharacterStatus,
+        characterSpecies: String,
         characterImageUrl: URL?
     ) {
         
         self.characterName = characterName
-        self.characterStatus = characterStatus
+        self.characterSpecies = characterSpecies
         self.characterImageUrl = characterImageUrl
 
     }
 
     // MARK: - Public
-    public var characterStatusText: String {
-        return characterStatus.rawValue
+    public var characterSpeciesText: String {
+        return characterSpecies
     }
     
     public func fetchImage(completion: @escaping (Result<Data, Error>) -> Void) {

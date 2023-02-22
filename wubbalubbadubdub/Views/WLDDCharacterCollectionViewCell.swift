@@ -31,6 +31,9 @@ class WLDDCharacterCollectionViewCell: UICollectionViewCell {
         label.textColor = .white
         label.font = .systemFont(ofSize: 18, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.textAlignment = .center
         return label
     }()
     
@@ -70,18 +73,17 @@ class WLDDCharacterCollectionViewCell: UICollectionViewCell {
             overlayView.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
             overlayView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
             overlayView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
-            overlayView.heightAnchor.constraint(equalToConstant: 60),
+            overlayView.heightAnchor.constraint(equalToConstant: 80),
             
             nameLabel.centerXAnchor.constraint(equalTo: overlayView.centerXAnchor),
             nameLabel.topAnchor.constraint(equalTo: overlayView.topAnchor, constant: 10),
+            nameLabel.widthAnchor.constraint(lessThanOrEqualTo: overlayView.widthAnchor),
+            nameLabel.bottomAnchor.constraint(lessThanOrEqualTo: statusLabel.topAnchor, constant: -5),
             
             statusLabel.centerXAnchor.constraint(equalTo: overlayView.centerXAnchor),
             statusLabel.bottomAnchor.constraint(equalTo: overlayView.bottomAnchor, constant: -10),
             
             statusLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
-            
-            
-            
         ])
     }
 
@@ -98,7 +100,7 @@ class WLDDCharacterCollectionViewCell: UICollectionViewCell {
     public func configure(with viewModel: WLDDCharacterCollectionViewCellViewModel) {
 //        imageView.loadImage(from: viewModel.imageUrl)
         nameLabel.text = viewModel.characterName
-        statusLabel.text = viewModel.characterStatusText
+        statusLabel.text = viewModel.characterSpeciesText
         viewModel.fetchImage {[weak self] result in
             switch result {
             case .success(let data):

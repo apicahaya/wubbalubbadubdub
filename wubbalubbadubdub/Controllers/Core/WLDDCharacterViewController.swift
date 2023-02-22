@@ -22,6 +22,7 @@ final class WLDDCharacterViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setupView() {
+        view.addSubview(characterListView)
         NSLayoutConstraint.activate([
             characterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             characterListView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
