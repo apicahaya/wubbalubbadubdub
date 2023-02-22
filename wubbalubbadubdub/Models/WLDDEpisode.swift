@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct WLDDEpisode {
+    let id: String
+    let name: String
+    let airDate: String
+    let episode: String
+    let characters: [String]
+    let url: String
+    let created: String
+}

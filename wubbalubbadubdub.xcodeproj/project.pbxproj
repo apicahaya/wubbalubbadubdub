@@ -21,11 +21,14 @@
 		D5E4187829A5BC260077C16C /* WLDDCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4187729A5BC260077C16C /* WLDDCharacterViewController.swift */; };
 		D5E4187A29A5BC340077C16C /* WLDDLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4187929A5BC340077C16C /* WLDDLocationViewController.swift */; };
 		D5E4187C29A5BC470077C16C /* WLDDEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4187B29A5BC470077C16C /* WLDDEpisodeViewController.swift */; };
-		D5E4187E29A5BC500077C16C /* WLDDSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4187D29A5BC500077C16C /* WLDDSettingViewController.swift */; };
 		D5E4188429A5C8CF0077C16C /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188329A5C8CF0077C16C /* UIImageExtensions.swift */; };
 		D5E4188629A5CA5B0077C16C /* WLDDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188529A5CA5B0077C16C /* WLDDService.swift */; };
 		D5E4188829A5CA6F0077C16C /* WLDDRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188729A5CA6F0077C16C /* WLDDRequest.swift */; };
 		D5E4188A29A5CAEE0077C16C /* WLDDEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188929A5CAEE0077C16C /* WLDDEndPoint.swift */; };
+		D5E4188C29A5CD550077C16C /* WLDDOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188B29A5CD550077C16C /* WLDDOrigin.swift */; };
+		D5E4188E29A5CDE40077C16C /* WLDDSingleLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188D29A5CDE40077C16C /* WLDDSingleLocation.swift */; };
+		D5E4189029A5CEE50077C16C /* WLDDCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188F29A5CEE50077C16C /* WLDDCharacterGender.swift */; };
+		D5E4189229A5CEF40077C16C /* WLDDCharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189129A5CEF40077C16C /* WLDDCharacterStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,11 +67,14 @@
 		D5E4187729A5BC260077C16C /* WLDDCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterViewController.swift; sourceTree = "<group>"; };
 		D5E4187929A5BC340077C16C /* WLDDLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDLocationViewController.swift; sourceTree = "<group>"; };
 		D5E4187B29A5BC470077C16C /* WLDDEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeViewController.swift; sourceTree = "<group>"; };
-		D5E4187D29A5BC500077C16C /* WLDDSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDSettingViewController.swift; sourceTree = "<group>"; };
 		D5E4188329A5C8CF0077C16C /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		D5E4188529A5CA5B0077C16C /* WLDDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDService.swift; sourceTree = "<group>"; };
 		D5E4188729A5CA6F0077C16C /* WLDDRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDRequest.swift; sourceTree = "<group>"; };
 		D5E4188929A5CAEE0077C16C /* WLDDEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEndPoint.swift; sourceTree = "<group>"; };
+		D5E4188B29A5CD550077C16C /* WLDDOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDOrigin.swift; sourceTree = "<group>"; };
+		D5E4188D29A5CDE40077C16C /* WLDDSingleLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDSingleLocation.swift; sourceTree = "<group>"; };
+		D5E4188F29A5CEE50077C16C /* WLDDCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterGender.swift; sourceTree = "<group>"; };
+		D5E4189129A5CEF40077C16C /* WLDDCharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,9 +182,13 @@
 		D5E4186A29A5B8A60077C16C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D5E4187029A5BB7A0077C16C /* WLDDLocation.swift */,
 				D5E4187229A5BB850077C16C /* WLDDCharacter.swift */,
 				D5E4187429A5BB8F0077C16C /* WLDDEpisode.swift */,
+				D5E4187029A5BB7A0077C16C /* WLDDLocation.swift */,
+				D5E4188B29A5CD550077C16C /* WLDDOrigin.swift */,
+				D5E4188D29A5CDE40077C16C /* WLDDSingleLocation.swift */,
+				D5E4188F29A5CEE50077C16C /* WLDDCharacterGender.swift */,
+				D5E4189129A5CEF40077C16C /* WLDDCharacterStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,7 +226,6 @@
 				D5E4187729A5BC260077C16C /* WLDDCharacterViewController.swift */,
 				D5E4187B29A5BC470077C16C /* WLDDEpisodeViewController.swift */,
 				D5E4187929A5BC340077C16C /* WLDDLocationViewController.swift */,
-				D5E4187D29A5BC500077C16C /* WLDDSettingViewController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -375,8 +384,11 @@
 				D5E4187829A5BC260077C16C /* WLDDCharacterViewController.swift in Sources */,
 				D504758129A5B4CE00906BBD /* AppDelegate.swift in Sources */,
 				D5E4187C29A5BC470077C16C /* WLDDEpisodeViewController.swift in Sources */,
+				D5E4189229A5CEF40077C16C /* WLDDCharacterStatus.swift in Sources */,
+				D5E4188C29A5CD550077C16C /* WLDDOrigin.swift in Sources */,
+				D5E4189029A5CEE50077C16C /* WLDDCharacterGender.swift in Sources */,
+				D5E4188E29A5CDE40077C16C /* WLDDSingleLocation.swift in Sources */,
 				D5E4187A29A5BC340077C16C /* WLDDLocationViewController.swift in Sources */,
-				D5E4187E29A5BC500077C16C /* WLDDSettingViewController.swift in Sources */,
 				D504758329A5B4CE00906BBD /* SceneDelegate.swift in Sources */,
 				D5E4187529A5BB8F0077C16C /* WLDDEpisode.swift in Sources */,
 				D5E4188829A5CA6F0077C16C /* WLDDRequest.swift in Sources */,
