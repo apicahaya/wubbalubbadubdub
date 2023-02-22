@@ -31,7 +31,10 @@ final class WLDDCharacterListView: UIView {
         collectionView.isHidden = true
         collectionView.alpha = 0
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(
+            WLDDCharacterCollectionViewCell.self,
+            forCellWithReuseIdentifier: WLDDCharacterCollectionViewCell.cellIdentifier
+        )
         return collectionView
     }()
     

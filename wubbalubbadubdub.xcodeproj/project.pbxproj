@@ -33,6 +33,8 @@
 		D5E4189829A641DF0077C16C /* WLDDCharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189729A641DF0077C16C /* WLDDCharacterListView.swift */; };
 		D5E4189A29A6434B0077C16C /* WLDDCharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189929A6434B0077C16C /* WLDDCharacterListViewModel.swift */; };
 		D5E4189C29A6B4160077C16C /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189B29A6B4160077C16C /* UIViewExtensions.swift */; };
+		D5E4189E29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189D29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift */; };
+		D5E418A029A6BBB60077C16C /* WLDDCharacterCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189F29A6BBB60077C16C /* WLDDCharacterCollectionViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		D5E4189729A641DF0077C16C /* WLDDCharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterListView.swift; sourceTree = "<group>"; };
 		D5E4189929A6434B0077C16C /* WLDDCharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterListViewModel.swift; sourceTree = "<group>"; };
 		D5E4189B29A6B4160077C16C /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		D5E4189D29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
+		D5E4189F29A6BBB60077C16C /* WLDDCharacterCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 		D5E4186829A5B89A0077C16C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D5E4189D29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift */,
 				D5E4189729A641DF0077C16C /* WLDDCharacterListView.swift */,
 			);
 			path = Views;
@@ -183,6 +188,7 @@
 		D5E4186929A5B8A10077C16C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D5E4189F29A6BBB60077C16C /* WLDDCharacterCollectionViewCellViewModel.swift */,
 				D5E4189929A6434B0077C16C /* WLDDCharacterListViewModel.swift */,
 			);
 			path = ViewModels;
@@ -407,6 +413,7 @@
 				D5E4188629A5CA5B0077C16C /* WLDDService.swift in Sources */,
 				D504758529A5B4CE00906BBD /* WLDDTabViewController.swift in Sources */,
 				D5E4188429A5C8CF0077C16C /* UIImageExtensions.swift in Sources */,
+				D5E4189E29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift in Sources */,
 				D5E4188A29A5CAEE0077C16C /* WLDDEndPoint.swift in Sources */,
 				D5E4187129A5BB7A0077C16C /* WLDDLocation.swift in Sources */,
 				D5E4187829A5BC260077C16C /* WLDDCharacterViewController.swift in Sources */,
@@ -425,6 +432,7 @@
 				D5E4189629A63D540077C16C /* WLDDGetCharactersResponse.swift in Sources */,
 				D5E4189A29A6434B0077C16C /* WLDDCharacterListViewModel.swift in Sources */,
 				D5E4189829A641DF0077C16C /* WLDDCharacterListView.swift in Sources */,
+				D5E418A029A6BBB60077C16C /* WLDDCharacterCollectionViewCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

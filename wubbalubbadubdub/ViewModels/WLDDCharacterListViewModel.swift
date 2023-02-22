@@ -12,8 +12,7 @@ final class WLDDCharacterListViewModel: NSObject {
         WLDDService.shared.execute(.listCharacterRequests, expecting: WLDDGetAllCharactersResponse.self) { result in
             switch result {
             case .success(let model):
-                print("Total: " + String(describing: model.info.pages))
-                print("Page result count: " + String(model.results.count))
+                print("Example image url: " + String(model.results.first?.image ?? "No Image"))
             case .failure(let error):
                 print(String(describing: error))
             }
@@ -33,8 +32,18 @@ extension WLDDCharacterListViewModel: UICollectionViewDataSource, UICollectionVi
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .red
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: WLDDCharacterCollectionViewCell.cellIdentifier,
+            for: indexPath
+        ) as? WLDDCharacterCollectionViewCell else {
+            fatalError("Unsupported cell")
+        } 
+        let viewModel = WLDDCharacterCollectionViewCellViewModel(
+            characterName: "Agni",
+            characterStatus: .alive,
+            characterImageUrl: URL(string: "https://rickandmortyapi.com/api/character/avatar/1.jpeg")
+        )
+        cell.configure(with: viewModel)
         return cell
     }
     
