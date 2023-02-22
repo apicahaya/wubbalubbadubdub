@@ -23,6 +23,9 @@
 		D5E4187C29A5BC470077C16C /* WLDDEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4187B29A5BC470077C16C /* WLDDEpisodeViewController.swift */; };
 		D5E4187E29A5BC500077C16C /* WLDDSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4187D29A5BC500077C16C /* WLDDSettingViewController.swift */; };
 		D5E4188429A5C8CF0077C16C /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188329A5C8CF0077C16C /* UIImageExtensions.swift */; };
+		D5E4188629A5CA5B0077C16C /* WLDDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188529A5CA5B0077C16C /* WLDDService.swift */; };
+		D5E4188829A5CA6F0077C16C /* WLDDRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188729A5CA6F0077C16C /* WLDDRequest.swift */; };
+		D5E4188A29A5CAEE0077C16C /* WLDDEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4188929A5CAEE0077C16C /* WLDDEndPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		D5E4187B29A5BC470077C16C /* WLDDEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeViewController.swift; sourceTree = "<group>"; };
 		D5E4187D29A5BC500077C16C /* WLDDSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDSettingViewController.swift; sourceTree = "<group>"; };
 		D5E4188329A5C8CF0077C16C /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		D5E4188529A5CA5B0077C16C /* WLDDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDService.swift; sourceTree = "<group>"; };
+		D5E4188729A5CA6F0077C16C /* WLDDRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDRequest.swift; sourceTree = "<group>"; };
+		D5E4188929A5CAEE0077C16C /* WLDDEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEndPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +193,9 @@
 		D5E4186C29A5B8B30077C16C /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
+				D5E4188529A5CA5B0077C16C /* WLDDService.swift */,
+				D5E4188729A5CA6F0077C16C /* WLDDRequest.swift */,
+				D5E4188929A5CAEE0077C16C /* WLDDEndPoint.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -358,8 +367,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5E4188629A5CA5B0077C16C /* WLDDService.swift in Sources */,
 				D504758529A5B4CE00906BBD /* WLDDTabViewController.swift in Sources */,
 				D5E4188429A5C8CF0077C16C /* UIImageExtensions.swift in Sources */,
+				D5E4188A29A5CAEE0077C16C /* WLDDEndPoint.swift in Sources */,
 				D5E4187129A5BB7A0077C16C /* WLDDLocation.swift in Sources */,
 				D5E4187829A5BC260077C16C /* WLDDCharacterViewController.swift in Sources */,
 				D504758129A5B4CE00906BBD /* AppDelegate.swift in Sources */,
@@ -368,6 +379,7 @@
 				D5E4187E29A5BC500077C16C /* WLDDSettingViewController.swift in Sources */,
 				D504758329A5B4CE00906BBD /* SceneDelegate.swift in Sources */,
 				D5E4187529A5BB8F0077C16C /* WLDDEpisode.swift in Sources */,
+				D5E4188829A5CA6F0077C16C /* WLDDRequest.swift in Sources */,
 				D5E4187329A5BB850077C16C /* WLDDCharacter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
