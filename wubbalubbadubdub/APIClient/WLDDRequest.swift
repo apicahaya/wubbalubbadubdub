@@ -43,19 +43,21 @@ final class WLDDRequest {
     }
     
     public var url: URL? {
-        return nil
+        return URL(string: urlString)
     }
+    
+    public let httpMethod = "GET"
     
     // MARK: - Public
     
     init(
         endpoint: WLDDEndPoint,
-        pathComponent: [String] = [],
-        queryParameter: [URLQueryItem] = []
+        pathComponents: [String] = [],
+        queryParameters: [URLQueryItem] = []
     ) {
         self.endpoint = endpoint
-        self.pathComponent = pathComponent
-        self.queryParameter = queryParameter
+        self.pathComponents = pathComponents
+        self.queryParameters = queryParameters
     }
     
 }

@@ -160,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				D5E4187629A5BC070077C16C /* Core */,
-				D504758429A5B4CE00906BBD /* WLDDTabViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -226,6 +225,7 @@
 				D5E4187729A5BC260077C16C /* WLDDCharacterViewController.swift */,
 				D5E4187B29A5BC470077C16C /* WLDDEpisodeViewController.swift */,
 				D5E4187929A5BC340077C16C /* WLDDLocationViewController.swift */,
+				D504758429A5B4CE00906BBD /* WLDDTabViewController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";

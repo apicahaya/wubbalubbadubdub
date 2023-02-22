@@ -8,7 +8,7 @@
 import Foundation
 
 @frozen enum WLDDEndPoint: String {
-    case character = "Character"
-    case location = "Location"
-    case episode = "Episode"
+    case character = "character"
+    case location = "location"
+    case episode = "episode"
 }

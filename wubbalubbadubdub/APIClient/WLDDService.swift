@@ -12,7 +12,12 @@ final class WLDDService {
     
     private init() {}
     
-    public func execute(_ request: WLDDRequest, completion: @escaping () -> Void) {
+    public func execute<T: Codable>(
+        _ request: WLDDRequest,
+        expecting type: T.Type,
+        completion: @escaping (Result<String,
+        Error>) -> Void
+    ) {
         
     }
 }
