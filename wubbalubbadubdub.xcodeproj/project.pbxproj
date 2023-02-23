@@ -38,6 +38,7 @@
 		D5E418A329A6F68D0077C16C /* WLDDCharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418A229A6F68D0077C16C /* WLDDCharacterDetailViewController.swift */; };
 		D5E418A529A6F6FA0077C16C /* WLDDCharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418A429A6F6FA0077C16C /* WLDDCharacterDetailView.swift */; };
 		D5E418A729A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418A629A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift */; };
+		D5E418A929A702E40077C16C /* WLDDFooterLoadingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418A829A702E40077C16C /* WLDDFooterLoadingCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		D5E418A229A6F68D0077C16C /* WLDDCharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterDetailViewController.swift; sourceTree = "<group>"; };
 		D5E418A429A6F6FA0077C16C /* WLDDCharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterDetailView.swift; sourceTree = "<group>"; };
 		D5E418A629A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterDetailViewModel.swift; sourceTree = "<group>"; };
+		D5E418A829A702E40077C16C /* WLDDFooterLoadingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDFooterLoadingCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				D5E4189D29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift */,
 				D5E4189729A641DF0077C16C /* WLDDCharacterListView.swift */,
 				D5E418A429A6F6FA0077C16C /* WLDDCharacterDetailView.swift */,
+				D5E418A829A702E40077C16C /* WLDDFooterLoadingCollectionReusableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			files = (
 				D5E4188629A5CA5B0077C16C /* WLDDService.swift in Sources */,
 				D504758529A5B4CE00906BBD /* WLDDTabViewController.swift in Sources */,
+				D5E418A929A702E40077C16C /* WLDDFooterLoadingCollectionReusableView.swift in Sources */,
 				D5E4188429A5C8CF0077C16C /* UIImageExtensions.swift in Sources */,
 				D5E4189E29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift in Sources */,
 				D5E418A329A6F68D0077C16C /* WLDDCharacterDetailViewController.swift in Sources */,

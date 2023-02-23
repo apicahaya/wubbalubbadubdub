@@ -44,6 +44,11 @@ final class WLDDCharacterListView: UIView {
             WLDDCharacterCollectionViewCell.self,
             forCellWithReuseIdentifier: WLDDCharacterCollectionViewCell.cellIdentifier
         )
+        collectionView.register(
+            WLDDFooterLoadingCollectionReusableView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: WLDDFooterLoadingCollectionReusableView.identifier
+        )
         return collectionView
     }()
     
