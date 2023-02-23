@@ -13,16 +13,6 @@ final class WLDDCharacterCollectionViewCellViewModel : Hashable {
     public let characterName: String
     private let characterSpecies: String
     private let characterImageUrl: URL?
-    
-    static func == (lhs: WLDDCharacterCollectionViewCellViewModel, rhs: WLDDCharacterCollectionViewCellViewModel) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(characterName)
-        hasher.combine(characterSpecies)
-        hasher.combine(characterImageUrl)
-    }
 
     // MARK: - Init
     init (
@@ -30,7 +20,6 @@ final class WLDDCharacterCollectionViewCellViewModel : Hashable {
         characterSpecies: String,
         characterImageUrl: URL?
     ) {
-        
         self.characterName = characterName
         self.characterSpecies = characterSpecies
         self.characterImageUrl = characterImageUrl
@@ -47,15 +36,19 @@ final class WLDDCharacterCollectionViewCellViewModel : Hashable {
             completion(.failure(URLError(.badURL)))
             return 
         }
-        let request = URLRequest(url: url)
-        let task = URLSession.shared.dataTask(with: request) { data, _, error in
-            guard let data = data, error == nil else {
-                completion(.failure(error ??  URLError(.badServerResponse)))
-                return
-            }
-            completion(.success(data))
-        }
+        
+        WLDDImageLoader.shared.downloadImage(url: url, completion: completion)
 
-        task.resume()
+    }
+    
+    // MARK: - Hashable
+    static func == (lhs: WLDDCharacterCollectionViewCellViewModel, rhs: WLDDCharacterCollectionViewCellViewModel) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(characterName)
+        hasher.combine(characterSpecies)
+        hasher.combine(characterImageUrl)
     }
 }

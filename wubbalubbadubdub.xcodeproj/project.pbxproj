@@ -39,6 +39,7 @@
 		D5E418A529A6F6FA0077C16C /* WLDDCharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418A429A6F6FA0077C16C /* WLDDCharacterDetailView.swift */; };
 		D5E418A729A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418A629A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift */; };
 		D5E418A929A702E40077C16C /* WLDDFooterLoadingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418A829A702E40077C16C /* WLDDFooterLoadingCollectionReusableView.swift */; };
+		D5E418AB29A71E5B0077C16C /* WLDDImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418AA29A71E5B0077C16C /* WLDDImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		D5E418A429A6F6FA0077C16C /* WLDDCharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterDetailView.swift; sourceTree = "<group>"; };
 		D5E418A629A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		D5E418A829A702E40077C16C /* WLDDFooterLoadingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDFooterLoadingCollectionReusableView.swift; sourceTree = "<group>"; };
+		D5E418AA29A71E5B0077C16C /* WLDDImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 		D5E4186B29A5B8AB0077C16C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				D5E418AA29A71E5B0077C16C /* WLDDImageLoader.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				D5E418A729A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift in Sources */,
 				D5E4189229A5CEF40077C16C /* WLDDCharacterStatus.swift in Sources */,
 				D5E4188C29A5CD550077C16C /* WLDDOrigin.swift in Sources */,
+				D5E418AB29A71E5B0077C16C /* WLDDImageLoader.swift in Sources */,
 				D5E4189029A5CEE50077C16C /* WLDDCharacterGender.swift in Sources */,
 				D5E418A529A6F6FA0077C16C /* WLDDCharacterDetailView.swift in Sources */,
 				D5E4188E29A5CDE40077C16C /* WLDDSingleLocation.swift in Sources */,
