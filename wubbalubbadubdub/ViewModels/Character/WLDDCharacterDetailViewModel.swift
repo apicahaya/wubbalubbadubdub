@@ -10,19 +10,37 @@ import UIKit
 
 final class WLDDCharacterDetailViewModel {
     private let character: WLDDCharacter
-    
-    enum SectionType: CaseIterable {
-        case photo
-        case information
-        case episodes
+    enum SectionType {
+        case photo(viewModel: WLDDCharacterPhotoCollectionViewCellViewModel)
+        
+        case information(viewModels: [WLDDCharacterInfoCollectionViewCellViewModel])
+        
+        case episodes(viewModels: [WLDDCharacterEpisodesCollectionViewCellViewModel])
     }
     
-    public let sections = SectionType.allCases
-    
-    
+    public var sections: [SectionType] = []
     
     init(character: WLDDCharacter) {
         self.character = character
+        setupSection()
+    }
+    
+    private func setupSection() {
+        sections = [
+            .photo(viewModel: .init()),
+            .information(viewModels: [
+                .init(),
+                .init(),
+                .init(),
+                .init(),
+                ]),
+            .episodes(viewModels: [
+                .init(),
+                .init(),
+                .init(),
+                .init(),
+            ])
+        ]
     }
     
     private var requestUrl: URL? {

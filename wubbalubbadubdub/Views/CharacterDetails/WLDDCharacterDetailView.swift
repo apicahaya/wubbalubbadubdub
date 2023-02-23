@@ -64,6 +64,18 @@ final class WLDDCharacterDetailView: UIView {
         }
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(
+            WLDDCharacterPhotoCollectionViewCell.self,
+            forCellWithReuseIdentifier: WLDDCharacterPhotoCollectionViewCell.cellIdentifier
+        )
+        collectionView.register(
+            WLDDCharacterInfoCollectionViewCell.self,
+            forCellWithReuseIdentifier: WLDDCharacterInfoCollectionViewCell.cellIdentifier
+        )
+        collectionView.register(
+            WLDDCharacterEpisodesCollectionViewCell.self,
+            forCellWithReuseIdentifier: WLDDCharacterEpisodesCollectionViewCell.cellIdentifier
+        )
+        collectionView.register(
             UICollectionViewCell.self,
             forCellWithReuseIdentifier: "cell"
         )
