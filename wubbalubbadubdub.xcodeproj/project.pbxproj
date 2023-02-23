@@ -35,6 +35,9 @@
 		D5E4189C29A6B4160077C16C /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189B29A6B4160077C16C /* UIViewExtensions.swift */; };
 		D5E4189E29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189D29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift */; };
 		D5E418A029A6BBB60077C16C /* WLDDCharacterCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E4189F29A6BBB60077C16C /* WLDDCharacterCollectionViewCellViewModel.swift */; };
+		D5E418A329A6F68D0077C16C /* WLDDCharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418A229A6F68D0077C16C /* WLDDCharacterDetailViewController.swift */; };
+		D5E418A529A6F6FA0077C16C /* WLDDCharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418A429A6F6FA0077C16C /* WLDDCharacterDetailView.swift */; };
+		D5E418A729A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418A629A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		D5E4189B29A6B4160077C16C /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		D5E4189D29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		D5E4189F29A6BBB60077C16C /* WLDDCharacterCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		D5E418A229A6F68D0077C16C /* WLDDCharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterDetailViewController.swift; sourceTree = "<group>"; };
+		D5E418A429A6F6FA0077C16C /* WLDDCharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterDetailView.swift; sourceTree = "<group>"; };
+		D5E418A629A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				D5E4187629A5BC070077C16C /* Core */,
+				D5E418A129A6F6790077C16C /* Detail */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +188,7 @@
 			children = (
 				D5E4189D29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift */,
 				D5E4189729A641DF0077C16C /* WLDDCharacterListView.swift */,
+				D5E418A429A6F6FA0077C16C /* WLDDCharacterDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +198,7 @@
 			children = (
 				D5E4189F29A6BBB60077C16C /* WLDDCharacterCollectionViewCellViewModel.swift */,
 				D5E4189929A6434B0077C16C /* WLDDCharacterListViewModel.swift */,
+				D5E418A629A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -278,6 +287,14 @@
 				D5E4189529A63D540077C16C /* WLDDGetCharactersResponse.swift */,
 			);
 			path = APIResponseTypes;
+			sourceTree = "<group>";
+		};
+		D5E418A129A6F6790077C16C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D5E418A229A6F68D0077C16C /* WLDDCharacterDetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,14 +431,17 @@
 				D504758529A5B4CE00906BBD /* WLDDTabViewController.swift in Sources */,
 				D5E4188429A5C8CF0077C16C /* UIImageExtensions.swift in Sources */,
 				D5E4189E29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift in Sources */,
+				D5E418A329A6F68D0077C16C /* WLDDCharacterDetailViewController.swift in Sources */,
 				D5E4188A29A5CAEE0077C16C /* WLDDEndPoint.swift in Sources */,
 				D5E4187129A5BB7A0077C16C /* WLDDLocation.swift in Sources */,
 				D5E4187829A5BC260077C16C /* WLDDCharacterViewController.swift in Sources */,
 				D504758129A5B4CE00906BBD /* AppDelegate.swift in Sources */,
 				D5E4187C29A5BC470077C16C /* WLDDEpisodeViewController.swift in Sources */,
+				D5E418A729A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift in Sources */,
 				D5E4189229A5CEF40077C16C /* WLDDCharacterStatus.swift in Sources */,
 				D5E4188C29A5CD550077C16C /* WLDDOrigin.swift in Sources */,
 				D5E4189029A5CEE50077C16C /* WLDDCharacterGender.swift in Sources */,
+				D5E418A529A6F6FA0077C16C /* WLDDCharacterDetailView.swift in Sources */,
 				D5E4188E29A5CDE40077C16C /* WLDDSingleLocation.swift in Sources */,
 				D5E4187A29A5BC340077C16C /* WLDDLocationViewController.swift in Sources */,
 				D5E4189C29A6B4160077C16C /* UIViewExtensions.swift in Sources */,

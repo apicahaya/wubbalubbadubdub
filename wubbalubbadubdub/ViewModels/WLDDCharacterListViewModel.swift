@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Foundation
 
 protocol WLDDCharacterListViewModelDelegate: AnyObject {
     func didLoadInitialCharacters()
+    
+    func didSelectCharacter(_ character: WLDDCharacter)
 }
 
 final class WLDDCharacterListViewModel: NSObject {
@@ -30,6 +33,8 @@ final class WLDDCharacterListViewModel: NSObject {
     
     private var cellViewModels: [WLDDCharacterCollectionViewCellViewModel] = []
     
+    private var apiInfo: WLDDGetAllCharactersResponse.Info? = nil
+    
     public func fetchCharacters() {
         WLDDService.shared.execute(
             .listCharacterRequests,
@@ -38,7 +43,9 @@ final class WLDDCharacterListViewModel: NSObject {
             switch result {
             case .success(let responseModel):
                 let result = responseModel.results
+                let info = responseModel.info
                 self?.characters = result
+                self?.apiInfo = info
                 DispatchQueue.main.async {
                     self?.delegate?.didLoadInitialCharacters()
                 }
@@ -47,6 +54,14 @@ final class WLDDCharacterListViewModel: NSObject {
                 print(String(describing: error))
             }
         }
+    }
+    
+    public func fetchAdditionalCharacters() {
+        
+    }
+    
+    public var shouldShowLoadMoreIndicator: Bool {
+        return apiInfo?.next != nil
     }
 }
 
@@ -74,7 +89,11 @@ extension WLDDCharacterListViewModel: UICollectionViewDataSource, UICollectionVi
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
         let bounds = UIScreen.main.bounds
         let width = (bounds.width - 30) / 2
         return CGSize(
@@ -83,5 +102,20 @@ extension WLDDCharacterListViewModel: UICollectionViewDataSource, UICollectionVi
         )
     }
     
-    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        let character = characters[indexPath.row]
+        delegate?.didSelectCharacter(character)
+    }
+}
+
+// MARK: - ScrollView Extension
+extension WLDDCharacterListViewModel: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard shouldShowLoadMoreIndicator else { 
+            return 
+        }
+    }
 }

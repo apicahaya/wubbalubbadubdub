@@ -7,7 +7,16 @@
 
 import UIKit
 
+protocol WLDDCharacterListViewDelegate: AnyObject {
+    func wlddCharacterListView(
+        _ characterListView: WLDDCharacterListView,
+        didSelectCharacter character: WLDDCharacter
+    )
+}
+
 final class WLDDCharacterListView: UIView {
+    
+    public weak var delegate: WLDDCharacterListViewDelegate?
     
     private let viewModel = WLDDCharacterListViewModel()
     
@@ -24,7 +33,7 @@ final class WLDDCharacterListView: UIView {
         layout.sectionInset = UIEdgeInsets(
             top: 0,
             left: 10,
-            bottom: 0,
+            bottom: 10,
             right: 10
         )
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -83,6 +92,13 @@ final class WLDDCharacterListView: UIView {
 }
 
 extension WLDDCharacterListView: WLDDCharacterListViewModelDelegate {
+    func didSelectCharacter(_ character: WLDDCharacter) {
+        delegate?.wlddCharacterListView(
+            self,
+            didSelectCharacter: character
+        )
+    }
+    
     func didLoadInitialCharacters() {
         spinner.stopAnimating()
         collectionView.isHidden = false

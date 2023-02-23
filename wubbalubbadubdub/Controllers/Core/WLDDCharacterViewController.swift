@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class WLDDCharacterViewController: UIViewController {
+final class WLDDCharacterViewController: UIViewController, WLDDCharacterListViewDelegate {
+    
+    
     
     private let characterListView = WLDDCharacterListView()
     
@@ -22,6 +24,7 @@ final class WLDDCharacterViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setupView() {
+        characterListView.delegate = self
         view.addSubview(characterListView)
         NSLayoutConstraint.activate([
             characterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -29,5 +32,20 @@ final class WLDDCharacterViewController: UIViewController {
             characterListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             characterListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
+    }
+    
+    // MARK: - WLDDCharacterListViewDelegate
+    
+    func wlddCharacterListView(
+        _ characterListView: WLDDCharacterListView,
+        didSelectCharacter character: WLDDCharacter
+    ) {
+        let viewModel = WLDDCharacterDetailViewModel(character: character)
+        let detailVC = WLDDCharacterDetailViewController(viewModel: viewModel)
+        detailVC.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(
+            detailVC,
+            animated: true
+        )
     }
 }
