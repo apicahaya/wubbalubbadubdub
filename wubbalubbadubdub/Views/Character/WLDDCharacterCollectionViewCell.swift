@@ -47,7 +47,7 @@ class WLDDCharacterCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Init
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame: frame)  
         contentView.backgroundColor = .secondarySystemBackground
         contentView.layer.cornerRadius = 10
         contentView.clipsToBounds = true

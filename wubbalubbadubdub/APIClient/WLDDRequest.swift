@@ -48,7 +48,7 @@ final class WLDDRequest {
     
     public let httpMethod = "GET"
     
-    // MARK: - Public
+    // MARK: - Init
     
     init(
         endpoint: WLDDEndPoint,
@@ -71,8 +71,18 @@ final class WLDDRequest {
             let components = trimmed.components(separatedBy: "/")
             if !components.isEmpty {
                 let endpointString = components[0]
-                if let wlddEndpoint = WLDDEndPoint(rawValue: endpointString) {
-                    self.init(endpoint: wlddEndpoint)
+                var pathComponents: [String] = []
+                if components.count > 1 {
+                    pathComponents = components
+                    pathComponents.removeFirst()
+                }
+                if let wlddEndpoint = WLDDEndPoint(
+                    rawValue: endpointString
+                ) {
+                    self.init(
+                        endpoint: wlddEndpoint,
+                        pathComponents: pathComponents
+                    )
                     return
                 }
             }

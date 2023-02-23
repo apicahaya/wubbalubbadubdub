@@ -12,6 +12,7 @@ final class WLDDImageLoader {
     
     private var imageDataCache = NSCache<NSString, NSData>()
     
+    
     private init() {
         
     }
