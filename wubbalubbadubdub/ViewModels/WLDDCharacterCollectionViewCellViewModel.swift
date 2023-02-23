@@ -8,11 +8,21 @@
 import UIKit
 import Foundation
 
-final class WLDDCharacterCollectionViewCellViewModel {
+final class WLDDCharacterCollectionViewCellViewModel : Hashable {
     
     public let characterName: String
     private let characterSpecies: String
     private let characterImageUrl: URL?
+    
+    static func == (lhs: WLDDCharacterCollectionViewCellViewModel, rhs: WLDDCharacterCollectionViewCellViewModel) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(characterName)
+        hasher.combine(characterSpecies)
+        hasher.combine(characterImageUrl)
+    }
 
     // MARK: - Init
     init (

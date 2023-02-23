@@ -10,16 +10,15 @@ import Foundation
 
 protocol WLDDCharacterListViewModelDelegate: AnyObject {
     func didLoadInitialCharacters()
-    
+    func didLoadMoreCharacter(with newIndexPath: [IndexPath])
     func didSelectCharacter(_ character: WLDDCharacter)
 }
 
 final class WLDDCharacterListViewModel: NSObject {
-    
+    // MARK: - Properties
+
     public weak var delegate: WLDDCharacterListViewModelDelegate?
-    
     private var isLoadingMoreCharacter = false
-    
     private var characters: [WLDDCharacter] = [] {
         didSet {
             for character in characters {
@@ -28,15 +27,19 @@ final class WLDDCharacterListViewModel: NSObject {
                     characterSpecies: character.species,
                     characterImageUrl: URL(string: character.image)
                 )
-                cellViewModels.append(viewModel)
+                if !cellViewModels.contains(viewModel) {
+                    cellViewModels.append(viewModel)
+                }  
             }
         }
     }
-    
     private var cellViewModels: [WLDDCharacterCollectionViewCellViewModel] = []
-    
     private var apiInfo: WLDDGetAllCharactersResponse.Info? = nil
+    public var shouldShowLoadMoreIndicator: Bool {
+        return apiInfo?.next != nil
+    }
     
+    // MARK: - Actions
     public func fetchCharacters() {
         WLDDService.shared.execute(
             .listCharacterRequests,
@@ -58,12 +61,49 @@ final class WLDDCharacterListViewModel: NSObject {
         }
     }
     
-    public func fetchAdditionalCharacters() {
+    public func fetchAdditionalCharacters(url: URL) {
+        guard !isLoadingMoreCharacter else {
+            return
+        }
         
-    }
-    
-    public var shouldShowLoadMoreIndicator: Bool {
-        return apiInfo?.next != nil
+        isLoadingMoreCharacter = true
+        guard let request = WLDDRequest(url: url) else {
+            isLoadingMoreCharacter = false
+            return
+        }
+
+        WLDDService.shared.execute(
+            request,
+            expecting: WLDDGetAllCharactersResponse.self
+        ) { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success(let responseModel):
+                let moreResult = responseModel.results
+                let info = responseModel.info
+                
+                let originalCount =  strongSelf.characters.count
+                let newCount = moreResult.count
+                let total = originalCount + newCount
+                let startingIndex = total - newCount
+                let indexPathToAdd: [IndexPath] = Array(startingIndex..<(startingIndex+newCount)).compactMap ({
+                    return IndexPath(row: $0, section: 0)
+                })
+                
+                strongSelf.characters.append(contentsOf: moreResult)
+                self?.apiInfo = info
+                DispatchQueue.main.async {
+                    strongSelf.delegate?.didLoadMoreCharacter(
+                        with: indexPathToAdd
+                    )
+                    strongSelf.isLoadingMoreCharacter = false
+                }
+                
+            case .failure(let failure):
+                print(String(describing: failure))
+                self?.isLoadingMoreCharacter = false
+            }
+        }
     }
 }
 // MARK: - UI Colletion View Delegate
@@ -151,17 +191,25 @@ extension WLDDCharacterListViewModel: UICollectionViewDataSource, UICollectionVi
 // MARK: - ScrollView Delegate
 extension WLDDCharacterListViewModel: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard shouldShowLoadMoreIndicator, !isLoadingMoreCharacter else { 
+        guard 
+            shouldShowLoadMoreIndicator, 
+            !isLoadingMoreCharacter,
+            !cellViewModels.isEmpty,
+            let nextUrlString = apiInfo?.next,
+            let url = URL(string: nextUrlString)
+        else { 
             return 
         }
-        let offset = scrollView.contentOffset.y
-        let totalContentHeight = scrollView.contentSize.height
-        let totalScrollViewFixedHeight = scrollView.frame.size.height
         
-        if offset >= (totalContentHeight - totalScrollViewFixedHeight - 120) {
-            fetchAdditionalCharacters()
-            isLoadingMoreCharacter = true
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { [weak self] t in
+            let offset = scrollView.contentOffset.y
+            let totalContentHeight = scrollView.contentSize.height
+            let totalScrollViewFixedHeight = scrollView.frame.size.height
             
+            if offset >= (totalContentHeight - totalScrollViewFixedHeight - 120) {
+                self?.fetchAdditionalCharacters(url: url)
+            }
+            t.invalidate()
         }
     }
 }
