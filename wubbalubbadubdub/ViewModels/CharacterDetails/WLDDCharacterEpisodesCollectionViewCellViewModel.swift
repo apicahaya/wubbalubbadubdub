@@ -8,5 +8,9 @@
 import Foundation
 
 final class WLDDCharacterEpisodesCollectionViewCellViewModel {
+    private let episodeDataUrl: URL?
     
+    init(episodeDataUrl: URL?) {
+        self.episodeDataUrl = episodeDataUrl
+    }
 }

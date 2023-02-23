@@ -194,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				D5E4187629A5BC070077C16C /* Core */,
-				D5E418A129A6F6790077C16C /* Detail */,
+				D5E418A129A6F6790077C16C /* Details */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -305,12 +305,12 @@
 			path = APIResponseTypes;
 			sourceTree = "<group>";
 		};
-		D5E418A129A6F6790077C16C /* Detail */ = {
+		D5E418A129A6F6790077C16C /* Details */ = {
 			isa = PBXGroup;
 			children = (
 				D5E418A229A6F68D0077C16C /* WLDDCharacterDetailViewController.swift */,
 			);
-			path = Detail;
+			path = Details;
 			sourceTree = "<group>";
 		};
 		D5E418AC29A73E400077C16C /* Character */ = {

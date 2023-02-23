@@ -8,5 +8,11 @@
 import Foundation
 
 final class WLDDCharacterInfoCollectionViewCellViewModel {
+    public let value: String
+    public let title: String
     
+    init(value: String, title: String) {
+        self.value = value
+        self.title = title
+    }
 }
