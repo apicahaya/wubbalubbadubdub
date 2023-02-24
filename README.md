@@ -21,5 +21,5 @@ Also, if you tap the cells, it will directed to this Location Detail View, that 
 Lastly, there are Episode View
 ![Simulator Screen Shot - iPhone 14 Pro - 2023-02-24 at 20 35 30](https://user-images.githubusercontent.com/60282972/221193404-e0418ecc-fc52-4e6f-b522-25b6eac3c5ae.png)
 
-and the detail view screen that can shows the episode name, air date, season, and created
+and the detail view screen that can shows the episode name, air date, episode and season, and created
 ![Simulator Screen Shot - iPhone 14 Pro - 2023-02-24 at 20 35 35](https://user-images.githubusercontent.com/60282972/221193548-a0022176-13cc-49d1-9a57-308a0a3a2241.png)
