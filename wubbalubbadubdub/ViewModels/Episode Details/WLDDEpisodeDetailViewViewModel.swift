@@ -16,18 +16,19 @@ class WLDDEpisodeDetailViewViewModel {
     // MARK: - Properties
     
     enum SectionType {
-        case information(viewmodels: [WLDDCharacterInfoCollectionViewCellViewModel])
+        case information(viewmodels: [WLDDEpisodeInfoCollectionViewViewModel])
         case characters(viewModels: [WLDDCharacterCollectionViewCellViewModel])
     }
 
     public weak var delegate: WLDDEpisodeDetailViewViewModelDelegate?
     
-    public private(set) var sections: [SectionType] = []
+    public private(set) var cellViewModels: [SectionType] = []
     
     private let endpointUrl: URL?
     
-    private var dataTuple: (WLDDEpisode, [WLDDCharacter])? {
+    private var dataTuple: (episode: WLDDEpisode, characters: [WLDDCharacter])? {
         didSet {
+            createCellViewModel()
             delegate?.didFetchEpisodeDetails()
         }
     }
@@ -36,6 +37,32 @@ class WLDDEpisodeDetailViewViewModel {
     
     init(endpointUrl: URL?) {
         self.endpointUrl = endpointUrl
+    }
+    
+    // MARK: - Methods
+    
+    private func createCellViewModel() {
+        guard let dataTuple = dataTuple else {
+            return
+        } 
+        
+        let episode = dataTuple.episode
+        let characters = dataTuple.characters
+        cellViewModels = [
+            .information(viewmodels: [
+                .init(title: "Episode Name: ",value: episode.name),
+                .init(title: "Air Date: ",value: episode.air_date),
+                .init(title: "Episode: ",value: episode.episode),
+                .init(title: "Created: ",value: episode.created),
+            ]),
+            .characters(viewModels: characters.compactMap({ character in
+                return WLDDCharacterCollectionViewCellViewModel(
+                    characterName: character.name,
+                    characterSpecies: character.species,
+                    characterImageUrl: URL(string: character.image)
+                )
+            }))
+        ]
     }
     
     public func fetchEpisodeData() {
@@ -80,8 +107,8 @@ class WLDDEpisodeDetailViewViewModel {
         
         group.notify(queue: .main) { 
             self.dataTuple = (
-                episode,
-                characters
+                episode: episode,
+                characters: characters
             )
         }
     }
