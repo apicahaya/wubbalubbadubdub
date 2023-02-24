@@ -14,6 +14,8 @@ class WLDDCharacterEpisodesCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        contentView.backgroundColor = .systemBlue
+        contentView.layer.cornerRadius = 8
     }
     
     required init?(coder: NSCoder) {
@@ -29,6 +31,10 @@ class WLDDCharacterEpisodesCollectionViewCell: UICollectionViewCell {
     }
     
     public func configure(with viewModel: WLDDCharacterEpisodesCollectionViewCellViewModel) {
+        viewModel.registerForData { data in
+            print(data.name)
+        }
         
+        viewModel.fetchEpisode()
     }
 }
