@@ -18,6 +18,10 @@ final class WLDDCharacterDetailViewModel {
         case episodes(viewModels: [WLDDCharacterEpisodesCollectionViewCellViewModel])
     }
     
+    public var episodes: [String] {
+        character.episode
+    }
+    
     public var sections: [SectionType] = []
     
     init(character: WLDDCharacter) {

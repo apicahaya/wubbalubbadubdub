@@ -46,6 +46,7 @@
 		D5E418B729A788020077C16C /* WLDDCharacterInfoCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418B629A788020077C16C /* WLDDCharacterInfoCollectionViewCellViewModel.swift */; };
 		D5E418B929A788220077C16C /* WLDDCharacterPhotoCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418B829A788220077C16C /* WLDDCharacterPhotoCollectionViewCellViewModel.swift */; };
 		D5E418BB29A788300077C16C /* WLDDCharacterEpisodesCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418BA29A788300077C16C /* WLDDCharacterEpisodesCollectionViewCellViewModel.swift */; };
+		D5E418BD29A84DB70077C16C /* WLDDEpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418BC29A84DB70077C16C /* WLDDEpisodeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		D5E418B629A788020077C16C /* WLDDCharacterInfoCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterInfoCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		D5E418B829A788220077C16C /* WLDDCharacterPhotoCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterPhotoCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		D5E418BA29A788300077C16C /* WLDDCharacterEpisodesCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterEpisodesCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		D5E418BC29A84DB70077C16C /* WLDDEpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				D5E418A229A6F68D0077C16C /* WLDDCharacterDetailViewController.swift */,
+				D5E418BC29A84DB70077C16C /* WLDDEpisodeDetailViewController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				D504758329A5B4CE00906BBD /* SceneDelegate.swift in Sources */,
 				D5E418B429A787D30077C16C /* WLDDCharacterEpisodesCollectionViewCell.swift in Sources */,
 				D5E4187529A5BB8F0077C16C /* WLDDEpisode.swift in Sources */,
+				D5E418BD29A84DB70077C16C /* WLDDEpisodeDetailViewController.swift in Sources */,
 				D5E4188829A5CA6F0077C16C /* WLDDRequest.swift in Sources */,
 				D5E4187329A5BB850077C16C /* WLDDCharacter.swift in Sources */,
 				D5E4189629A63D540077C16C /* WLDDGetCharactersResponse.swift in Sources */,
