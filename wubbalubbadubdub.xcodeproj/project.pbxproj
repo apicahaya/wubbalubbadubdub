@@ -318,7 +318,6 @@
 			children = (
 				D5E4189F29A6BBB60077C16C /* WLDDCharacterCollectionViewCellViewModel.swift */,
 				D5E4189929A6434B0077C16C /* WLDDCharacterListViewModel.swift */,
-				D5E418A629A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -346,6 +345,7 @@
 		D5E418B529A787D80077C16C /* CharacterDetails */ = {
 			isa = PBXGroup;
 			children = (
+				D5E418A629A6F74E0077C16C /* WLDDCharacterDetailViewModel.swift */,
 				D5E418BA29A788300077C16C /* WLDDCharacterEpisodesCollectionViewCellViewModel.swift */,
 				D5E418B629A788020077C16C /* WLDDCharacterInfoCollectionViewCellViewModel.swift */,
 				D5E418B829A788220077C16C /* WLDDCharacterPhotoCollectionViewCellViewModel.swift */,
