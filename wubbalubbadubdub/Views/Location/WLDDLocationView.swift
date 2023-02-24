@@ -26,7 +26,7 @@ class WLDDLocationView: UIView {
         table.alpha = 0
         table.isHidden = true
         
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.register(WLDDLocationTableViewCell.self, forCellReuseIdentifier: WLDDLocationTableViewCell.cellIdentifier)
         
         return table
     }()
@@ -46,9 +46,9 @@ class WLDDLocationView: UIView {
         backgroundColor = .systemBackground
         translatesAutoresizingMaskIntoConstraints = false
         addSubviews(tableView, spinner)
-        
         spinner.startAnimating()
         addConstraints()
+        configureTable()
     }
     
     required init?(coder: NSCoder) {
@@ -69,9 +69,49 @@ class WLDDLocationView: UIView {
         ])
     }
     
+    private func configureTable() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
     public func configure(with viewModel: WLDDLocationViewViewModel) {
         self.viewModel = viewModel
     }
-    
+}
 
+// MARK: - Table View Delegate
+
+extension WLDDLocationView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+}
+
+// MARK: - Table View Data Source
+extension WLDDLocationView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cellViewModels = viewModel?.cellViewModels else {
+            fatalError()
+        }
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: WLDDLocationTableViewCell.cellIdentifier,
+            for: indexPath
+        ) as? WLDDLocationTableViewCell else {
+            fatalError()
+        }
+        let cellViewModel = cellViewModels[indexPath.row]
+        cell.textLabel?.text = cellViewModel.name
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.cellViewModels.count ?? 0
+    }
+    
+    
 }

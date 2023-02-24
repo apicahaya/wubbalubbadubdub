@@ -8,7 +8,7 @@
 import UIKit
 
 final class WLDDLocationViewController: UIViewController {
-    
+
     private let primaryView = WLDDLocationView()
     
     private let viewModel = WLDDLocationViewViewModel()
@@ -17,11 +17,14 @@ final class WLDDLocationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("wldd location view controller is loaded")
         view.addSubview(primaryView)
         view.backgroundColor = .systemBackground
         title = "Locations"
         addSearchButton()
         addConstraints()
+        viewModel.delegate = self
+        viewModel.fetchLocations()
     }
     
     private func addSearchButton() {
@@ -44,7 +47,13 @@ final class WLDDLocationViewController: UIViewController {
     @objc private func didTapSearch() {
         
     }
-   
-    
+}
 
+// MARK: - Extension LocationView View Model Delegate
+
+extension WLDDLocationViewController: WLDDLocationViewViewModelDelegate {
+    func didFetchInitialLocations() {
+        print("this is called")
+        primaryView.configure(with: viewModel)
+    }
 }

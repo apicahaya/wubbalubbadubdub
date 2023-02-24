@@ -58,6 +58,9 @@
 		D5E418D329A8A3880077C16C /* WLDDEpisodeInfoCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418D229A8A3880077C16C /* WLDDEpisodeInfoCollectionViewViewModel.swift */; };
 		D5E418D629A8CA210077C16C /* WLDDLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418D529A8CA210077C16C /* WLDDLocationView.swift */; };
 		D5E418D929A8D03D0077C16C /* WLDDLocationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418D829A8D03D0077C16C /* WLDDLocationViewViewModel.swift */; };
+		D5E418DB29A8D3AE0077C16C /* WLDDGetAllLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418DA29A8D3AE0077C16C /* WLDDGetAllLocationsResponse.swift */; };
+		D5E418DD29A8E3590077C16C /* WLDDLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418DC29A8E3590077C16C /* WLDDLocationTableViewCell.swift */; };
+		D5E418DF29A8E3D60077C16C /* WLDDLocationTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418DE29A8E3D60077C16C /* WLDDLocationTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +136,9 @@
 		D5E418D229A8A3880077C16C /* WLDDEpisodeInfoCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeInfoCollectionViewViewModel.swift; sourceTree = "<group>"; };
 		D5E418D529A8CA210077C16C /* WLDDLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDLocationView.swift; sourceTree = "<group>"; };
 		D5E418D829A8D03D0077C16C /* WLDDLocationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDLocationViewViewModel.swift; sourceTree = "<group>"; };
+		D5E418DA29A8D3AE0077C16C /* WLDDGetAllLocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDGetAllLocationsResponse.swift; sourceTree = "<group>"; };
+		D5E418DC29A8E3590077C16C /* WLDDLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDLocationTableViewCell.swift; sourceTree = "<group>"; };
+		D5E418DE29A8E3D60077C16C /* WLDDLocationTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDLocationTableViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +339,7 @@
 			children = (
 				D5E4189529A63D540077C16C /* WLDDGetCharactersResponse.swift */,
 				D5E418CA29A872AE0077C16C /* WLDDGetAllEpisodesResponse.swift */,
+				D5E418DA29A8D3AE0077C16C /* WLDDGetAllLocationsResponse.swift */,
 			);
 			path = APIResponseTypes;
 			sourceTree = "<group>";
@@ -425,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				D5E418D529A8CA210077C16C /* WLDDLocationView.swift */,
+				D5E418DC29A8E3590077C16C /* WLDDLocationTableViewCell.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -433,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				D5E418D829A8D03D0077C16C /* WLDDLocationViewViewModel.swift */,
+				D5E418DE29A8E3D60077C16C /* WLDDLocationTableViewCellViewModel.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -599,7 +608,9 @@
 				D5E418A529A6F6FA0077C16C /* WLDDCharacterDetailView.swift in Sources */,
 				D5E4188E29A5CDE40077C16C /* WLDDSingleLocation.swift in Sources */,
 				D5E4187A29A5BC340077C16C /* WLDDLocationViewController.swift in Sources */,
+				D5E418DF29A8E3D60077C16C /* WLDDLocationTableViewCellViewModel.swift in Sources */,
 				D5E418CD29A897230077C16C /* WLDDSearchViewController.swift in Sources */,
+				D5E418DD29A8E3590077C16C /* WLDDLocationTableViewCell.swift in Sources */,
 				D5E4189C29A6B4160077C16C /* UIViewExtensions.swift in Sources */,
 				D5E418C929A86B9E0077C16C /* WLDDEpisodeListViewViewModel.swift in Sources */,
 				D504758329A5B4CE00906BBD /* SceneDelegate.swift in Sources */,
@@ -611,6 +622,7 @@
 				D5E4189629A63D540077C16C /* WLDDGetCharactersResponse.swift in Sources */,
 				D5E4189A29A6434B0077C16C /* WLDDCharacterListViewViewModel.swift in Sources */,
 				D5E4189829A641DF0077C16C /* WLDDCharacterListView.swift in Sources */,
+				D5E418DB29A8D3AE0077C16C /* WLDDGetAllLocationsResponse.swift in Sources */,
 				D5E418A029A6BBB60077C16C /* WLDDCharacterCollectionViewCellViewModel.swift in Sources */,
 				D5E418D929A8D03D0077C16C /* WLDDLocationViewViewModel.swift in Sources */,
 			);

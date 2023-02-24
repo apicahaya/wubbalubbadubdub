@@ -7,22 +7,46 @@
 
 import Foundation
 
+protocol WLDDLocationViewViewModelDelegate: AnyObject {
+    func didFetchInitialLocations()
+}
+
 final class WLDDLocationViewViewModel {
     
-    private var locations: [WLDDLocation] = []
+    weak var delegate: WLDDLocationViewViewModelDelegate?
     
-    private var cellViewModels: [String] = []
+    private var locations: [WLDDLocation] = [] {
+        didSet {
+            for location in locations {
+                let cellViewModel = WLDDLocationTableViewCellViewModel(location: location)
+                if !cellViewModels.contains(cellViewModel) {
+                    cellViewModels.append(cellViewModel)
+                }
+            }
+        }
+    }
+    
+    public private(set) var cellViewModels: [WLDDLocationTableViewCellViewModel] = []
+    
+    private var apiInfo: WLDDGetAllLocationsResponse.Info?
     
     init() {
-        
     }
     
     public func fetchLocations() {
-        WLDDService.shared.execute(.listLocationsRequests, expecting: String.self) { result in
+        WLDDService.shared.execute(
+            .listLocationsRequests,
+            expecting: WLDDGetAllLocationsResponse.self
+        ) { [weak self] result in
             switch result {
-            case .success(let success):
-                break
-            case .failure(let failure):
+            case .success(let model):
+                self?.apiInfo = model.info
+                self?.locations = model.results
+                DispatchQueue.main.async {
+                    self?.delegate?.didFetchInitialLocations()
+                }
+            case .failure(let error):
+                
                 break
             }
         }

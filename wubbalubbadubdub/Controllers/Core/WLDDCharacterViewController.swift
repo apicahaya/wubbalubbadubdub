@@ -24,7 +24,6 @@ final class WLDDCharacterViewController: UIViewController, WLDDCharacterListView
     // MARK: - Private Methods
     private func setupView() {
         characterListView.delegate = self
-        view.addSubview(characterListView)
         NSLayoutConstraint.activate([
             characterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             characterListView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
@@ -34,7 +33,11 @@ final class WLDDCharacterViewController: UIViewController, WLDDCharacterListView
     }
     
     private func addSearchButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearch))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .search,
+            target: self,
+            action: #selector(didTapSearch)
+        )
     }
     
     @objc private func didTapSearch() {

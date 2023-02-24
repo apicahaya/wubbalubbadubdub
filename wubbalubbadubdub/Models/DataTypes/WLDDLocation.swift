@@ -14,5 +14,5 @@ struct WLDDLocation: Codable {
     let dimension: String
     let residents: [String]
     let url: String
-    let create: String
+    let created: String
 }
