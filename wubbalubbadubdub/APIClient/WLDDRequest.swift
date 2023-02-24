@@ -120,4 +120,5 @@ final class WLDDRequest {
 extension WLDDRequest {
     static let listCharacterRequests = WLDDRequest(endpoint: .character)
     static let listEpisodesRequests = WLDDRequest(endpoint: .episode)
+    static let listLocationsRequests = WLDDRequest(endpoint: .location)
 }

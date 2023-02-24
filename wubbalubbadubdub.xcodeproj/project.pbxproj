@@ -56,6 +56,8 @@
 		D5E418CD29A897230077C16C /* WLDDSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418CC29A897230077C16C /* WLDDSearchViewController.swift */; };
 		D5E418D029A8A3570077C16C /* WLDDEpisodeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418CF29A8A3570077C16C /* WLDDEpisodeInfoCollectionViewCell.swift */; };
 		D5E418D329A8A3880077C16C /* WLDDEpisodeInfoCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418D229A8A3880077C16C /* WLDDEpisodeInfoCollectionViewViewModel.swift */; };
+		D5E418D629A8CA210077C16C /* WLDDLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418D529A8CA210077C16C /* WLDDLocationView.swift */; };
+		D5E418D929A8D03D0077C16C /* WLDDLocationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418D829A8D03D0077C16C /* WLDDLocationViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		D5E418CC29A897230077C16C /* WLDDSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDSearchViewController.swift; sourceTree = "<group>"; };
 		D5E418CF29A8A3570077C16C /* WLDDEpisodeInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		D5E418D229A8A3880077C16C /* WLDDEpisodeInfoCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeInfoCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		D5E418D529A8CA210077C16C /* WLDDLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDLocationView.swift; sourceTree = "<group>"; };
+		D5E418D829A8D03D0077C16C /* WLDDLocationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDLocationViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +231,7 @@
 				D5E418AE29A787630077C16C /* CharacterDetails */,
 				D5E418C429A86B0E0077C16C /* Episode */,
 				D5E418CE29A8A31A0077C16C /* EpisodeDetails */,
+				D5E418D429A8CA040077C16C /* Location */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				D5E418B529A787D80077C16C /* CharacterDetails */,
 				D5E418C729A86B8D0077C16C /* Episode */,
 				D5E418D129A8A36A0077C16C /* Episode Details */,
+				D5E418D729A8D02C0077C16C /* Location */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -415,6 +421,22 @@
 			path = "Episode Details";
 			sourceTree = "<group>";
 		};
+		D5E418D429A8CA040077C16C /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				D5E418D529A8CA210077C16C /* WLDDLocationView.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		D5E418D729A8D02C0077C16C /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				D5E418D829A8D03D0077C16C /* WLDDLocationViewViewModel.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -569,6 +591,7 @@
 				D5E418B229A787C40077C16C /* WLDDCharacterInfoCollectionViewCell.swift in Sources */,
 				D5E418C629A86B490077C16C /* WLDDEpisodeListView.swift in Sources */,
 				D5E418CB29A872AE0077C16C /* WLDDGetAllEpisodesResponse.swift in Sources */,
+				D5E418D629A8CA210077C16C /* WLDDLocationView.swift in Sources */,
 				D5E418AB29A71E5B0077C16C /* WLDDImageLoader.swift in Sources */,
 				D5E4189029A5CEE50077C16C /* WLDDCharacterGender.swift in Sources */,
 				D5E418BF29A84F130077C16C /* WLDDAPICacheManager.swift in Sources */,
@@ -589,6 +612,7 @@
 				D5E4189A29A6434B0077C16C /* WLDDCharacterListViewViewModel.swift in Sources */,
 				D5E4189829A641DF0077C16C /* WLDDCharacterListView.swift in Sources */,
 				D5E418A029A6BBB60077C16C /* WLDDCharacterCollectionViewCellViewModel.swift in Sources */,
+				D5E418D929A8D03D0077C16C /* WLDDLocationViewViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
