@@ -7,7 +7,16 @@
 
 import UIKit
 
+protocol WLDDLocationViewDelegate: AnyObject {
+    func wlddLocationView(
+        _ locationView: WLDDLocationView,
+        didSelect location: WLDDLocation
+    )
+}
+
 class WLDDLocationView: UIView {
+    
+    public weak var delegate: WLDDLocationViewDelegate?
     
     private var viewModel: WLDDLocationViewViewModel? {
         didSet {
@@ -21,7 +30,7 @@ class WLDDLocationView: UIView {
     }
     
     private let tableView: UITableView = {
-        let table = UITableView()
+        let table = UITableView(frame: .zero, style: .grouped)
         table.translatesAutoresizingMaskIntoConstraints = false
         table.alpha = 0
         table.isHidden = true
@@ -84,6 +93,11 @@ class WLDDLocationView: UIView {
 extension WLDDLocationView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let locationModel = viewModel?.location(at: indexPath.row) else {
+            return
+        }
+        
+        delegate?.wlddLocationView(self, didSelect: locationModel)
     }
     
 }
@@ -101,7 +115,7 @@ extension WLDDLocationView: UITableViewDataSource {
             fatalError()
         }
         let cellViewModel = cellViewModels[indexPath.row]
-        cell.textLabel?.text = cellViewModel.name
+        cell.configure(with: cellViewModel)
         return cell
     }
     

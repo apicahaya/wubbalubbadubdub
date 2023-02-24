@@ -18,6 +18,7 @@ final class WLDDLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("wldd location view controller is loaded")
+        primaryView.delegate = self
         view.addSubview(primaryView)
         view.backgroundColor = .systemBackground
         title = "Locations"
@@ -56,4 +57,15 @@ extension WLDDLocationViewController: WLDDLocationViewViewModelDelegate {
         print("this is called")
         primaryView.configure(with: viewModel)
     }
+}
+
+extension WLDDLocationViewController: WLDDLocationViewDelegate {
+    func wlddLocationView(
+        _ locationView: WLDDLocationView,
+        didSelect location: WLDDLocation
+    ) {
+        let vc = WLDDLocationDetailsViewController(location: location)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

@@ -33,6 +33,13 @@ final class WLDDLocationViewViewModel {
     init() {
     }
     
+    public func location(at index: Int) -> WLDDLocation? {
+        guard index < locations.count, index >= 0 else {
+            return nil
+        }
+        return self.locations[index]
+    }
+    
     public func fetchLocations() {
         WLDDService.shared.execute(
             .listLocationsRequests,
