@@ -12,6 +12,8 @@ final class WLDDEpisodeDetailViewController: UIViewController {
     private let url: URL?
     private let viewModel: WLDDEpisodeDetailViewViewModel
     
+    private let detailView = WLDDEpisodeDetailView()
+    
     // MARK: - Init
     init(url: URL?) {
        
@@ -26,12 +28,23 @@ final class WLDDEpisodeDetailViewController: UIViewController {
     }
     
     // MARK: - Life cycle
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Episode"
-        view.backgroundColor = .systemGreen
+        view.backgroundColor = .systemBackground
+        view.addSubview(detailView)
+        addConstraint()
     }
     
-
-    
+    private func addConstraint() {
+        NSLayoutConstraint.activate([
+            
+            detailView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            detailView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            detailView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            detailView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+        ])
+    }
 }

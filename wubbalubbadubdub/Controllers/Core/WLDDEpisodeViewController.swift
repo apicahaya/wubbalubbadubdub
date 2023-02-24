@@ -16,6 +16,7 @@ final class WLDDEpisodeViewController: UIViewController, WLDDEpisodeListViewDele
         view.backgroundColor = .systemBackground
         title = "Episode"
         setupView()
+        addSearchButton()
     }    
     
     // MARK: - Private Methods
@@ -28,6 +29,14 @@ final class WLDDEpisodeViewController: UIViewController, WLDDEpisodeListViewDele
             episodeListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             episodeListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
+    }
+    
+    private func addSearchButton() {
+           navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearch))
+       }
+       
+    @objc private func didTapSearch() {
+        
     }
     
     // MARK: - WLDDCharacterListViewDelegate

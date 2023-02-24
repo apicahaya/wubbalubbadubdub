@@ -42,15 +42,18 @@ class WLDDCharacterEpisodesCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .tertiarySystemBackground
-        contentView.layer.cornerRadius = 8
-        contentView.layer.borderColor = UIColor.systemBlue.cgColor
-        contentView.layer.borderWidth = 1.0
+        setupLayer()
         contentView.addSubviews(seasonLabel, nameLabel, airDateLabel)
         setUpConstraint()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupLayer() {
+        contentView.layer.cornerRadius = 8
+        contentView.layer.borderWidth = 1.0
     }
     
     private func setUpConstraint() {
@@ -88,5 +91,6 @@ class WLDDCharacterEpisodesCollectionViewCell: UICollectionViewCell {
         }
         
         viewModel.fetchEpisode()
+        contentView.layer.borderColor = viewModel.borderColor.cgColor
     }
 }

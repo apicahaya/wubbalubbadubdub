@@ -5,7 +5,7 @@
 //  Created by Agni Muhammad on 23/02/23.
 //
 
-import Foundation
+import UIKit
 
 protocol WLDDEpisodeDataRender {
     var name: String { get }
@@ -19,6 +19,9 @@ final class WLDDCharacterEpisodesCollectionViewCellViewModel: Hashable, Equatabl
     private let episodeDataUrl: URL?
     private  var isFetching = false
     private var dataBlock: ((WLDDEpisodeDataRender) -> Void)?
+    
+    public let borderColor: UIColor
+    
     private var episode: WLDDEpisode? {
         didSet {
             guard let model = episode else {
@@ -30,8 +33,9 @@ final class WLDDCharacterEpisodesCollectionViewCellViewModel: Hashable, Equatabl
     
     
     // MARK: - Init
-    init(episodeDataUrl: URL?) {
+    init(episodeDataUrl: URL?, borderColor: UIColor = .systemBlue ) {
         self.episodeDataUrl = episodeDataUrl
+        self.borderColor = borderColor
     }
     
     // MARK: - Public Method

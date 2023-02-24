@@ -18,6 +18,7 @@ final class WLDDCharacterViewController: UIViewController, WLDDCharacterListView
         title = "Characters"
         view.addSubview(characterListView)
         setupView()
+        addSearchButton()
     }    
     
     // MARK: - Private Methods
@@ -30,6 +31,16 @@ final class WLDDCharacterViewController: UIViewController, WLDDCharacterListView
             characterListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             characterListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
+    }
+    
+    private func addSearchButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearch))
+    }
+    
+    @objc private func didTapSearch() {
+        let vc = WLDDSearchViewController(config: WLDDSearchViewController.Config(type: .character))
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - WLDDCharacterListViewDelegate

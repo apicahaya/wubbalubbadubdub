@@ -53,6 +53,7 @@
 		D5E418C629A86B490077C16C /* WLDDEpisodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418C529A86B490077C16C /* WLDDEpisodeListView.swift */; };
 		D5E418C929A86B9E0077C16C /* WLDDEpisodeListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418C829A86B9E0077C16C /* WLDDEpisodeListViewViewModel.swift */; };
 		D5E418CB29A872AE0077C16C /* WLDDGetAllEpisodesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418CA29A872AE0077C16C /* WLDDGetAllEpisodesResponse.swift */; };
+		D5E418CD29A897230077C16C /* WLDDSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418CC29A897230077C16C /* WLDDSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		D5E418C529A86B490077C16C /* WLDDEpisodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeListView.swift; sourceTree = "<group>"; };
 		D5E418C829A86B9E0077C16C /* WLDDEpisodeListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeListViewViewModel.swift; sourceTree = "<group>"; };
 		D5E418CA29A872AE0077C16C /* WLDDGetAllEpisodesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDGetAllEpisodesResponse.swift; sourceTree = "<group>"; };
+		D5E418CC29A897230077C16C /* WLDDSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				D5E4187629A5BC070077C16C /* Core */,
-				D5E418A129A6F6790077C16C /* Details */,
+				D5E418A129A6F6790077C16C /* Other */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -324,13 +326,14 @@
 			path = APIResponseTypes;
 			sourceTree = "<group>";
 		};
-		D5E418A129A6F6790077C16C /* Details */ = {
+		D5E418A129A6F6790077C16C /* Other */ = {
 			isa = PBXGroup;
 			children = (
 				D5E418A229A6F68D0077C16C /* WLDDCharacterDetailViewController.swift */,
 				D5E418BC29A84DB70077C16C /* WLDDEpisodeDetailViewController.swift */,
+				D5E418CC29A897230077C16C /* WLDDSearchViewController.swift */,
 			);
-			path = Details;
+			path = Other;
 			sourceTree = "<group>";
 		};
 		D5E418AC29A73E400077C16C /* Character */ = {
@@ -549,6 +552,7 @@
 				D5E418A529A6F6FA0077C16C /* WLDDCharacterDetailView.swift in Sources */,
 				D5E4188E29A5CDE40077C16C /* WLDDSingleLocation.swift in Sources */,
 				D5E4187A29A5BC340077C16C /* WLDDLocationViewController.swift in Sources */,
+				D5E418CD29A897230077C16C /* WLDDSearchViewController.swift in Sources */,
 				D5E4189C29A6B4160077C16C /* UIViewExtensions.swift in Sources */,
 				D5E418C929A86B9E0077C16C /* WLDDEpisodeListViewViewModel.swift in Sources */,
 				D504758329A5B4CE00906BBD /* SceneDelegate.swift in Sources */,
