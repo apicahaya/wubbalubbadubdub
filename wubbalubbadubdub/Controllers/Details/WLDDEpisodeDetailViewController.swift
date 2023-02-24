@@ -10,7 +10,7 @@ import UIKit
 final class WLDDEpisodeDetailViewController: UIViewController {
     // MARK: - Properties
     private let url: URL?
-    private let viewModel: WLDDDetailViewViewModel
+    private let viewModel: WLDDEpisodeDetailViewViewModel
     
     // MARK: - Init
     init(url: URL?) {

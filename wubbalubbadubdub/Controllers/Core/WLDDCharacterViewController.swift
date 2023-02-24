@@ -9,8 +9,6 @@ import UIKit
 
 final class WLDDCharacterViewController: UIViewController, WLDDCharacterListViewDelegate {
     
-    
-    
     private let characterListView = WLDDCharacterListView()
     
     override func viewDidLoad() {

@@ -13,7 +13,8 @@ protocol WLDDEpisodeDataRender {
     var episode: String { get }
 }
 
-final class WLDDCharacterEpisodesCollectionViewCellViewModel {
+final class WLDDCharacterEpisodesCollectionViewCellViewModel: Hashable, Equatable {
+    
     // MARK: - Properties
     private let episodeDataUrl: URL?
     private  var isFetching = false
@@ -66,4 +67,15 @@ final class WLDDCharacterEpisodesCollectionViewCellViewModel {
             }
         }
     }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.episodeDataUrl?.absoluteString ?? "")
+    }
+    
+    static func == (lhs: WLDDCharacterEpisodesCollectionViewCellViewModel, rhs: WLDDCharacterEpisodesCollectionViewCellViewModel) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+    
 }
+
+

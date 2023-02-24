@@ -1,24 +1,24 @@
 //
-//  WLDDCharacterListView.swift
+//  WLDDEpisodeListView.swift
 //  wubbalubbadubdub
 //
-//  Created by Agni Muhammad on 22/02/23.
+//  Created by Agni Muhammad on 24/02/23.
 //
 
 import UIKit
 
-protocol WLDDCharacterListViewDelegate: AnyObject {
-    func wlddCharacterListView(
-        _ characterListView: WLDDCharacterListView,
-        didSelectCharacter character: WLDDCharacter
+protocol WLDDEpisodeListViewDelegate: AnyObject {
+    func wlddEpisodeListView(
+        _ episodeListView: WLDDEpisodeListView,
+        didSelectEpisode character: WLDDEpisode
     )
 }
 
-final class WLDDCharacterListView: UIView {
+final class WLDDEpisodeListView: UIView {
+
+    public weak var delegate: WLDDEpisodeListViewDelegate?
     
-    public weak var delegate: WLDDCharacterListViewDelegate?
-    
-    private let viewModel = WLDDCharacterListViewViewModel()
+    private let viewModel = WLDDEpisodeListViewViewModel()
     
     private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .large)
@@ -41,8 +41,8 @@ final class WLDDCharacterListView: UIView {
         collectionView.alpha = 0
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(
-            WLDDCharacterCollectionViewCell.self,
-            forCellWithReuseIdentifier: WLDDCharacterCollectionViewCell.cellIdentifier
+            WLDDCharacterEpisodesCollectionViewCell.self,
+            forCellWithReuseIdentifier: WLDDCharacterEpisodesCollectionViewCell.cellIdentifier
         )
         collectionView.register(
             WLDDFooterLoadingCollectionReusableView.self,
@@ -62,7 +62,7 @@ final class WLDDCharacterListView: UIView {
         addConstraints()
 
         spinner.startAnimating()
-        viewModel.fetchCharacters()
+        viewModel.fetchEpisodes()
         viewModel.delegate = self
         
         setupCollectionView()
@@ -96,15 +96,8 @@ final class WLDDCharacterListView: UIView {
     }
 }
 
-extension WLDDCharacterListView: WLDDCharacterListViewModelDelegate {
-    func didSelectCharacter(_ character: WLDDCharacter) {
-        delegate?.wlddCharacterListView(
-            self,
-            didSelectCharacter: character
-        )
-    }
-    
-    func didLoadInitialCharacters() {
+extension WLDDEpisodeListView: WLDDEpisodeListViewViewModelDelegate {
+    func didLoadInitialEpisodes() {
         spinner.stopAnimating()
         collectionView.isHidden = false
         collectionView.reloadData()
@@ -113,9 +106,13 @@ extension WLDDCharacterListView: WLDDCharacterListViewModelDelegate {
         }
     }
     
-    func didLoadMoreCharacter(with newIndexPath: [IndexPath]) {
+    func didLoadMoreEpisodes(with newIndexPath: [IndexPath]) {
         collectionView.performBatchUpdates { 
             self.collectionView.insertItems(at: newIndexPath)
         }
+    }
+     
+    func didSelectEpisode(_ episode: WLDDEpisode) {
+        delegate?.wlddEpisodeListView(self, didSelectEpisode: episode)
     }
 }

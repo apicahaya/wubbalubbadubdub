@@ -1,5 +1,5 @@
 //
-//  WLDDCharacterListViewModel.swift
+//  WLDDCharacterListViewViewModel.swift
 //  wubbalubbadubdub
 //
 //  Created by Agni Muhammad on 22/02/23.
@@ -14,7 +14,7 @@ protocol WLDDCharacterListViewModelDelegate: AnyObject {
     func didSelectCharacter(_ character: WLDDCharacter)
 }
 
-final class WLDDCharacterListViewModel: NSObject {
+final class WLDDCharacterListViewViewModel: NSObject {
     // MARK: - Properties
 
     public weak var delegate: WLDDCharacterListViewModelDelegate?
@@ -107,7 +107,7 @@ final class WLDDCharacterListViewModel: NSObject {
     }
 }
 // MARK: - UI Colletion View Delegate
-extension WLDDCharacterListViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension WLDDCharacterListViewViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(
         _ collectionView: UICollectionView,
@@ -189,7 +189,7 @@ extension WLDDCharacterListViewModel: UICollectionViewDataSource, UICollectionVi
 }
 
 // MARK: - ScrollView Delegate
-extension WLDDCharacterListViewModel: UIScrollViewDelegate {
+extension WLDDCharacterListViewViewModel: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard 
             shouldShowLoadMoreIndicator, 
