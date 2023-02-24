@@ -54,6 +54,8 @@
 		D5E418C929A86B9E0077C16C /* WLDDEpisodeListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418C829A86B9E0077C16C /* WLDDEpisodeListViewViewModel.swift */; };
 		D5E418CB29A872AE0077C16C /* WLDDGetAllEpisodesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418CA29A872AE0077C16C /* WLDDGetAllEpisodesResponse.swift */; };
 		D5E418CD29A897230077C16C /* WLDDSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418CC29A897230077C16C /* WLDDSearchViewController.swift */; };
+		D5E418D029A8A3570077C16C /* WLDDEpisodeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418CF29A8A3570077C16C /* WLDDEpisodeInfoCollectionViewCell.swift */; };
+		D5E418D329A8A3880077C16C /* WLDDEpisodeInfoCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418D229A8A3880077C16C /* WLDDEpisodeInfoCollectionViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,8 @@
 		D5E418C829A86B9E0077C16C /* WLDDEpisodeListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeListViewViewModel.swift; sourceTree = "<group>"; };
 		D5E418CA29A872AE0077C16C /* WLDDGetAllEpisodesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDGetAllEpisodesResponse.swift; sourceTree = "<group>"; };
 		D5E418CC29A897230077C16C /* WLDDSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDSearchViewController.swift; sourceTree = "<group>"; };
+		D5E418CF29A8A3570077C16C /* WLDDEpisodeInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		D5E418D229A8A3880077C16C /* WLDDEpisodeInfoCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeInfoCollectionViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,11 +222,11 @@
 		D5E4186829A5B89A0077C16C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D5E418C229A869470077C16C /* WLDDEpisodeDetailView.swift */,
 				D5E418A829A702E40077C16C /* WLDDFooterLoadingCollectionReusableView.swift */,
 				D5E418AD29A73E4F0077C16C /* Character */,
 				D5E418AE29A787630077C16C /* CharacterDetails */,
 				D5E418C429A86B0E0077C16C /* Episode */,
+				D5E418CE29A8A31A0077C16C /* EpisodeDetails */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +237,7 @@
 				D5E418AC29A73E400077C16C /* Character */,
 				D5E418B529A787D80077C16C /* CharacterDetails */,
 				D5E418C729A86B8D0077C16C /* Episode */,
+				D5E418D129A8A36A0077C16C /* Episode Details */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -387,10 +392,27 @@
 		D5E418C729A86B8D0077C16C /* Episode */ = {
 			isa = PBXGroup;
 			children = (
-				D5E418C029A868DD0077C16C /* WLDDEpisodeDetailViewViewModel.swift */,
 				D5E418C829A86B9E0077C16C /* WLDDEpisodeListViewViewModel.swift */,
 			);
 			path = Episode;
+			sourceTree = "<group>";
+		};
+		D5E418CE29A8A31A0077C16C /* EpisodeDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D5E418C229A869470077C16C /* WLDDEpisodeDetailView.swift */,
+				D5E418CF29A8A3570077C16C /* WLDDEpisodeInfoCollectionViewCell.swift */,
+			);
+			path = EpisodeDetails;
+			sourceTree = "<group>";
+		};
+		D5E418D129A8A36A0077C16C /* Episode Details */ = {
+			isa = PBXGroup;
+			children = (
+				D5E418C029A868DD0077C16C /* WLDDEpisodeDetailViewViewModel.swift */,
+				D5E418D229A8A3880077C16C /* WLDDEpisodeInfoCollectionViewViewModel.swift */,
+			);
+			path = "Episode Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,8 +552,10 @@
 				D5E4188429A5C8CF0077C16C /* UIImageExtensions.swift in Sources */,
 				D5E418B729A788020077C16C /* WLDDCharacterInfoCollectionViewCellViewModel.swift in Sources */,
 				D5E4189E29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift in Sources */,
+				D5E418D029A8A3570077C16C /* WLDDEpisodeInfoCollectionViewCell.swift in Sources */,
 				D5E418A329A6F68D0077C16C /* WLDDCharacterDetailViewController.swift in Sources */,
 				D5E418C329A869470077C16C /* WLDDEpisodeDetailView.swift in Sources */,
+				D5E418D329A8A3880077C16C /* WLDDEpisodeInfoCollectionViewViewModel.swift in Sources */,
 				D5E418C129A868DD0077C16C /* WLDDEpisodeDetailViewViewModel.swift in Sources */,
 				D5E4188A29A5CAEE0077C16C /* WLDDEndPoint.swift in Sources */,
 				D5E4187129A5BB7A0077C16C /* WLDDLocation.swift in Sources */,

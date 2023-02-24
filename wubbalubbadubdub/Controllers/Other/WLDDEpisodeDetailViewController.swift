@@ -7,9 +7,12 @@
 
 import UIKit
 
-final class WLDDEpisodeDetailViewController: UIViewController {
+final class WLDDEpisodeDetailViewController: UIViewController, WLDDEpisodeDetailViewViewModelDelegate {
+    
+    
     // MARK: - Properties
     private let url: URL?
+    
     private let viewModel: WLDDEpisodeDetailViewViewModel
     
     private let detailView = WLDDEpisodeDetailView()
@@ -35,7 +38,11 @@ final class WLDDEpisodeDetailViewController: UIViewController {
         title = "Episode"
         view.backgroundColor = .systemBackground
         view.addSubview(detailView)
+        
         addConstraint()
+        
+        viewModel.delegate = self
+        viewModel.fetchEpisodeData()
     }
     
     private func addConstraint() {
@@ -46,5 +53,10 @@ final class WLDDEpisodeDetailViewController: UIViewController {
             detailView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             detailView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
+    }
+    
+    // MARK: - Delegate
+    func didFetchEpisodeDetails() {
+        detailView.configure(with: viewModel)
     }
 }
