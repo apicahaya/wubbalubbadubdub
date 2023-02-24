@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class WLDDEpisodeDetailViewController: UIViewController, WLDDEpisodeDetailViewViewModelDelegate {
+final class WLDDEpisodeDetailViewController: UIViewController, WLDDEpisodeDetailViewViewModelDelegate, WLDDEpisodeDetailViewDelegate {
     
     
     // MARK: - Properties
-    private let url: URL?
+//    private let url: URL?
     
     private let viewModel: WLDDEpisodeDetailViewViewModel
     
@@ -20,7 +20,7 @@ final class WLDDEpisodeDetailViewController: UIViewController, WLDDEpisodeDetail
     // MARK: - Init
     init(url: URL?) {
        
-        self.url = url
+//        self.url = url
         self.viewModel = .init(endpointUrl: url)
         super.init(nibName: nil, bundle: nil)
         
@@ -38,6 +38,7 @@ final class WLDDEpisodeDetailViewController: UIViewController, WLDDEpisodeDetail
         title = "Episode"
         view.backgroundColor = .systemBackground
         view.addSubview(detailView)
+        detailView.delegate = self
         
         addConstraint()
         
@@ -55,8 +56,19 @@ final class WLDDEpisodeDetailViewController: UIViewController, WLDDEpisodeDetail
         ])
     }
     
-    // MARK: - Delegate
+    // MARK: - View Model Delegate
     func didFetchEpisodeDetails() {
         detailView.configure(with: viewModel)
+    }
+    
+    // MARK: - View Delegate
+    func wlddEpisodeDetailView(
+        _ detailView: WLDDEpisodeDetailView,
+        didSelect character: WLDDCharacter
+    ) {
+        let vc = WLDDCharacterDetailViewController(viewModel: .init(character: character))
+        vc.title = character.name
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

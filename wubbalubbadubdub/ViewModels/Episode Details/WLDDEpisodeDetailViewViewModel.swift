@@ -41,6 +41,13 @@ class WLDDEpisodeDetailViewViewModel {
     
     // MARK: - Methods
     
+    public func character(at index: Int) -> WLDDCharacter? {
+        guard let dataTuple = dataTuple else {
+            return nil
+        }
+        return dataTuple.characters[index]
+    }
+    
     private func createCellViewModel() {
         guard let dataTuple = dataTuple else {
             return
@@ -48,12 +55,19 @@ class WLDDEpisodeDetailViewViewModel {
         
         let episode = dataTuple.episode
         let characters = dataTuple.characters
+        
+        var createdString = episode.created
+        
+        if let date = WLDDCharacterInfoCollectionViewCellViewModel.dateFormatter.date(from: episode.created) {
+            createdString = WLDDCharacterInfoCollectionViewCellViewModel.shortDateFormatter.string(from: date) 
+        }
+        
         cellViewModels = [
             .information(viewmodels: [
                 .init(title: "Episode Name: ",value: episode.name),
                 .init(title: "Air Date: ",value: episode.air_date),
                 .init(title: "Episode: ",value: episode.episode),
-                .init(title: "Created: ",value: episode.created),
+                .init(title: "Created: ",value: createdString),
             ]),
             .characters(viewModels: characters.compactMap({ character in
                 return WLDDCharacterCollectionViewCellViewModel(

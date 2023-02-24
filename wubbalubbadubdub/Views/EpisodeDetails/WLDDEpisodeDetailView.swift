@@ -7,7 +7,16 @@
 
 import UIKit
 
+protocol WLDDEpisodeDetailViewDelegate: AnyObject {
+    func wlddEpisodeDetailView(
+        _ detailView: WLDDEpisodeDetailView,
+        didSelect character: WLDDCharacter
+    )
+}
+
 final class WLDDEpisodeDetailView: UIView {
+    
+    public weak var delegate: WLDDEpisodeDetailViewDelegate?
     
     private var viewModel: WLDDEpisodeDetailViewViewModel? {
         didSet {
@@ -168,13 +177,29 @@ extension WLDDEpisodeDetailView: UICollectionViewDataSource, UICollectionViewDel
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        collectionView.deselectItem(
-            at: indexPath,
-            animated: true
-        )
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        guard let viewModel = viewModel else {
+            return
+        }
+        
+        let sections = viewModel.cellViewModels
+       
+        let sectionType = sections[indexPath.section]
+        
+        switch sectionType {
+        case .information:
+            break
+        case .characters:
+            guard let character = viewModel.character(at: indexPath.row) else {
+                return
+            }
+            delegate?.wlddEpisodeDetailView(
+                self,
+                didSelect: character
+            )
+        }
     }
-    
-    
 }
 
 
@@ -188,7 +213,7 @@ extension WLDDEpisodeDetailView {
         switch sections[section] {
         case .information:
             return createInfoLayout()
-        case .characters(viewModels: let viewModels):
+        case .characters:
             return createCharacterLayout()
         }
         
@@ -197,7 +222,7 @@ extension WLDDEpisodeDetailView {
     func createInfoLayout() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(
             layoutSize: .init(widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(1))
+                              heightDimension: .fractionalHeight(0.8))
         )
         item.contentInsets = NSDirectionalEdgeInsets(
             top: 10,

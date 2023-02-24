@@ -44,7 +44,6 @@ final class WLDDEpisodeViewController: UIViewController, WLDDEpisodeListViewDele
         _ episodeListView: WLDDEpisodeListView,
         didSelectEpisode episode: WLDDEpisode
     ) {
-        let viewModel = WLDDEpisodeDetailViewViewModel(endpointUrl: URL(string: episode.url))
         let detailVC = WLDDEpisodeDetailViewController(url: URL(string: episode.url))
         detailVC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(detailVC, animated: true)
