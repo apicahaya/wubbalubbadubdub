@@ -47,6 +47,9 @@
 		D5E418B929A788220077C16C /* WLDDCharacterPhotoCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418B829A788220077C16C /* WLDDCharacterPhotoCollectionViewCellViewModel.swift */; };
 		D5E418BB29A788300077C16C /* WLDDCharacterEpisodesCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418BA29A788300077C16C /* WLDDCharacterEpisodesCollectionViewCellViewModel.swift */; };
 		D5E418BD29A84DB70077C16C /* WLDDEpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418BC29A84DB70077C16C /* WLDDEpisodeDetailViewController.swift */; };
+		D5E418BF29A84F130077C16C /* WLDDAPICacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418BE29A84F130077C16C /* WLDDAPICacheManager.swift */; };
+		D5E418C129A868DD0077C16C /* WLDDDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418C029A868DD0077C16C /* WLDDDetailViewViewModel.swift */; };
+		D5E418C329A869470077C16C /* WLDDEpisodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E418C229A869470077C16C /* WLDDEpisodeDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,9 @@
 		D5E418B829A788220077C16C /* WLDDCharacterPhotoCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterPhotoCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		D5E418BA29A788300077C16C /* WLDDCharacterEpisodesCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDCharacterEpisodesCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		D5E418BC29A84DB70077C16C /* WLDDEpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeDetailViewController.swift; sourceTree = "<group>"; };
+		D5E418BE29A84F130077C16C /* WLDDAPICacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDAPICacheManager.swift; sourceTree = "<group>"; };
+		D5E418C029A868DD0077C16C /* WLDDDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDDetailViewViewModel.swift; sourceTree = "<group>"; };
+		D5E418C229A869470077C16C /* WLDDEpisodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLDDEpisodeDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +213,7 @@
 				D5E418A829A702E40077C16C /* WLDDFooterLoadingCollectionReusableView.swift */,
 				D5E418AD29A73E4F0077C16C /* Character */,
 				D5E418AE29A787630077C16C /* CharacterDetails */,
+				D5E418C229A869470077C16C /* WLDDEpisodeDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +223,7 @@
 			children = (
 				D5E418AC29A73E400077C16C /* Character */,
 				D5E418B529A787D80077C16C /* CharacterDetails */,
+				D5E418C029A868DD0077C16C /* WLDDDetailViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -233,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				D5E418AA29A71E5B0077C16C /* WLDDImageLoader.swift */,
+				D5E418BE29A84F130077C16C /* WLDDAPICacheManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -494,6 +503,8 @@
 				D5E418B729A788020077C16C /* WLDDCharacterInfoCollectionViewCellViewModel.swift in Sources */,
 				D5E4189E29A6BAA60077C16C /* WLDDCharacterCollectionViewCell.swift in Sources */,
 				D5E418A329A6F68D0077C16C /* WLDDCharacterDetailViewController.swift in Sources */,
+				D5E418C329A869470077C16C /* WLDDEpisodeDetailView.swift in Sources */,
+				D5E418C129A868DD0077C16C /* WLDDDetailViewViewModel.swift in Sources */,
 				D5E4188A29A5CAEE0077C16C /* WLDDEndPoint.swift in Sources */,
 				D5E4187129A5BB7A0077C16C /* WLDDLocation.swift in Sources */,
 				D5E4187829A5BC260077C16C /* WLDDCharacterViewController.swift in Sources */,
@@ -506,6 +517,7 @@
 				D5E418B229A787C40077C16C /* WLDDCharacterInfoCollectionViewCell.swift in Sources */,
 				D5E418AB29A71E5B0077C16C /* WLDDImageLoader.swift in Sources */,
 				D5E4189029A5CEE50077C16C /* WLDDCharacterGender.swift in Sources */,
+				D5E418BF29A84F130077C16C /* WLDDAPICacheManager.swift in Sources */,
 				D5E418BB29A788300077C16C /* WLDDCharacterEpisodesCollectionViewCellViewModel.swift in Sources */,
 				D5E418A529A6F6FA0077C16C /* WLDDCharacterDetailView.swift in Sources */,
 				D5E4188E29A5CDE40077C16C /* WLDDSingleLocation.swift in Sources */,

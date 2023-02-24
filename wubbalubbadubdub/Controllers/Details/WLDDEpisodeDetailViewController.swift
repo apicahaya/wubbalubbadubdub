@@ -8,14 +8,17 @@
 import UIKit
 
 final class WLDDEpisodeDetailViewController: UIViewController {
-    
+    // MARK: - Properties
     private let url: URL?
+    private let viewModel: WLDDDetailViewViewModel
     
     // MARK: - Init
     init(url: URL?) {
        
         self.url = url
+        self.viewModel = .init(endpointUrl: url)
         super.init(nibName: nil, bundle: nil)
+        
     }
     
     required init?(coder: NSCoder) {

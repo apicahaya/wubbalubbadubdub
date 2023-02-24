@@ -12,7 +12,7 @@ final class WLDDRequest {
         static let baseUrl = "https://rickandmortyapi.com/api"
     }
 
-    private let endpoint: WLDDEndPoint
+    let endpoint: WLDDEndPoint
     
     private let pathComponents: [String]
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-@frozen enum WLDDEndPoint: String {
+@frozen enum WLDDEndPoint: String, CaseIterable, Hashable {
     case character = "character"
     case location = "location"
     case episode = "episode"
